@@ -11,7 +11,7 @@ const Bio = () => {
         management, and machine learning roles.
       </p>
       <p className={styles.paragraph}>
-        On my own I am studying for an AWS SAA-C03 Certificate, refining my
+        About Me: On my own I am studying for an AWS SAA-C03 Certificate, refining my
         knowledge of data structures and algorithms, and learning about
         quantitative trading.
       </p>
