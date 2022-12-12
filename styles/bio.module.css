@@ -1,0 +1,13 @@
+.box {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-shadow: 0 0 8px #ccc;
+  padding:2em;
+  margin: 2em;
+}
+.name {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
