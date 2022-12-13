@@ -1,0 +1,30 @@
+.box {
+    background-color: rgb(4, 0, 26);
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    box-shadow: 0 0 8px #ccc;
+    padding:1em;
+    margin: 2em;
+  }
+.paragraph {
+    margin: 0.5rem;
+}
+.showCourses{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    border: 1px solid #ccc;
+    background-color: rgb(4, 0, 26);
+    color:#fff;
+    border-radius: 1em;
+    font-size: 1em;
+    transition: 0.3s;
+}
+.showCourses:hover{
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(21, 2, 129);
+    cursor: pointer;
+    transition: 0.3s;
+}
