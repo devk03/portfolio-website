@@ -13,16 +13,21 @@ const Courses = () => {
           Hide Course Work
         </button>
         <header className={styles.box}>
-          <p className={styles.paragraph}>// Data Structures and Algorithms</p>
-          <p className={styles.paragraph}>// Differential Calculus</p>
-          <p className={styles.paragraph}>// Linear Algebra</p>
-          <p className={styles.paragraph}>// Discrete Mathematics</p>
-          <p className={styles.paragraph}>// Integral Calculus</p>
-          <p className={styles.paragraph}>// Multivariabal Calculus</p>
-          <p className={styles.paragraph}>// Microeconomics</p>
-          <p className={styles.paragraph}>// Statistics and Data Analysis</p>
           <p className={styles.paragraph}>
-            // Processes and Throughput Optimization
+            &#9824; Data Structures and Algorithms
+          </p>
+          <p className={styles.paragraph}>&#9827; Differential Calculus</p>
+          <p className={styles.paragraph}>&#9829; Linear Algebra</p>
+          <p className={styles.paragraph}>&#9830; Discrete Mathematics</p>
+          <p className={styles.paragraph}>&#9824; Integral Calculus</p>
+          <p className={styles.paragraph}>&#9827; Multivariabal Calculus</p>
+          <p className={styles.paragraph}>&#9829; Microeconomics</p>
+          <p className={styles.paragraph}>
+            {" "}
+            &#9830; Statistics and Data Analysis
+          </p>
+          <p className={styles.paragraph}>
+            &#9824; Processes and Throughput Optimization
           </p>
         </header>
       </Fragment>
