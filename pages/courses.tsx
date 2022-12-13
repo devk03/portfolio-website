@@ -20,7 +20,7 @@ const Courses = () => {
           <p className={styles.paragraph}>&#9829; Linear Algebra</p>
           <p className={styles.paragraph}>&#9830; Discrete Mathematics</p>
           <p className={styles.paragraph}>&#9824; Integral Calculus</p>
-          <p className={styles.paragraph}>&#9827; Multivariabal Calculus</p>
+          <p className={styles.paragraph}>&#9827; Multivariable Calculus</p>
           <p className={styles.paragraph}>&#9829; Microeconomics</p>
           <p className={styles.paragraph}>
             {" "}
