@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/bio.module.css";
+import { Fragment } from "react";
 const Bio = () => {
   return (
-    <header className={styles.box}>
-      <h1 className={styles.name}> &lt; Dev Kunjadia /&gt;</h1>
-      <p className={styles.paragraph}>
-        Hi. My name is Dev Kunjadia. I am currently a junior at the University
-        of Michgian studying computer science and pure mathematics. I am
-        interested in software engineering, quantitative trading, product
-        management, and machine learning roles.
-      </p>
-      <p className={styles.paragraph}>
-        About Me: On my own I am studying for an AWS SAA-C03 Certificate, refining my
-        knowledge of data structures and algorithms, and learning about
-        quantitative trading.
-      </p>
-    </header>
+    <Fragment>
+      <header className={styles.box}>
+        <h1 className={styles.name}> &lt; Dev Kunjadia /&gt;</h1>
+        <p className={styles.basicDescription}>
+          Computer Scientist / Mathematician @ The University of Michigan
+        </p>
+        <div>
+          <a className={styles.links} href="Kunjadia_resume.pdf" download>
+            &#x2770; Resume &#x2771;
+          </a>
+          <br />
+          <a
+            className={styles.links}
+            href="https://www.linkedin.com/in/dev-kunjadia/"
+          >
+            &#x2770; LinkedIn &#x2771;
+          </a>
+          <br />
+          <a className={styles.links} href="https://github.com/devk03">
+            {" "}
+            &#x2770; Github &#x2771;
+          </a>
+        </div>
+      </header>
+    </Fragment>
   );
 };
 export default Bio;
