@@ -23,7 +23,7 @@ const Courses = () => {
           <p className={styles.paragraph}>&#x2756; Multivariable Calculus &#x2756;</p>
           <p className={styles.paragraph}>&#x2756; Microeconomics &#x2756;</p>
           <p className={styles.paragraph}>
-          &#x2756; Statistics and Data Analysis
+          &#x2756; Statistics and Data Analysis &#x2756;
           </p>
           <p className={styles.paragraph}>
           &#x2756; Throughput Optimization &#x2756;
