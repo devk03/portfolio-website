@@ -23,7 +23,7 @@ const Projects = () => {
                 <a>Dynamic Expense Tracker - In Progress</a>
             </p>
             <p className={styles.paragraph}>
-                <a href="">Candy Land - In progress</a>
+                <a>Candy Land - In progress</a>
             </p>
           </header>
         </Fragment>
