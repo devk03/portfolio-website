@@ -4,9 +4,12 @@
     border-radius: 0.5em;
     margin: 1.5em;
     text-align: center;
+
 }
 .paragraph {
     margin: 0.5rem;
+    font-weight: bold;
+    text-align: center;
 }
 .showCourses{
     display: flex;
@@ -14,6 +17,7 @@
     align-items: center;
     text-align: center;
     margin:auto;
+    margin-bottom: 0.5em;
     padding:0.5em;
     border: 2px solid #ccc;
     background-color: rgb(4, 0, 26);
@@ -26,4 +30,13 @@
     background-color: rgb(21, 2, 129);
     cursor: pointer;
     transition: 0.3s;
+}
+@media screen and (max-width: 480px) {
+    .box {
+        background-color: rgb(20, 0, 51);
+        border: 2px solid #ccc;
+        border-radius: 0.5em;
+        margin: 1.5em;
+        text-align: left;
+    }
 }

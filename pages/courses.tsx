@@ -14,20 +14,19 @@ const Courses = () => {
         </button>
         <header className={styles.box}>
           <p className={styles.paragraph}>
-            &#9824; Data Structures and Algorithms
+          &#x2756; Data Structures and Algorithms &#x2756;
           </p>
-          <p className={styles.paragraph}>&#9827; Differential Calculus</p>
-          <p className={styles.paragraph}>&#9829; Linear Algebra</p>
-          <p className={styles.paragraph}>&#9830; Discrete Mathematics</p>
-          <p className={styles.paragraph}>&#9824; Integral Calculus</p>
-          <p className={styles.paragraph}>&#9827; Multivariable Calculus</p>
-          <p className={styles.paragraph}>&#9829; Microeconomics</p>
+          <p className={styles.paragraph}>&#x2756; Differential Calculus &#x2756;</p>
+          <p className={styles.paragraph}>&#x2756; Linear Algebra &#x2756;</p>
+          <p className={styles.paragraph}>&#x2756; Discrete Mathematics &#x2756;</p>
+          <p className={styles.paragraph}>&#x2756; Integral Calculus &#x2756;</p>
+          <p className={styles.paragraph}>&#x2756; Multivariable Calculus &#x2756;</p>
+          <p className={styles.paragraph}>&#x2756; Microeconomics &#x2756;</p>
           <p className={styles.paragraph}>
-            {" "}
-            &#9830; Statistics and Data Analysis
+          &#x2756; Statistics and Data Analysis
           </p>
           <p className={styles.paragraph}>
-            &#9824; Processes and Throughput Optimization
+          &#x2756; Throughput Optimization &#x2756;
           </p>
         </header>
       </Fragment>
