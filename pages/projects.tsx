@@ -23,7 +23,7 @@ const Projects = () => {
                 <a>Dynamic Expense Tracker - In Progress</a>
             </p>
             <p className={styles.paragraph}>
-                <a>Candy Land - In progress</a>
+                <a href="https://github.com/devk03/CandyLandUX">Candy Land</a>
             </p>
           </header>
         </Fragment>
