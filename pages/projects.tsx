@@ -13,6 +13,9 @@ const Projects = () => {
             Hide Projects
           </button>
           <header className={styles.box}>
+          <p className={styles.paragraph}>
+                <a href="https://github.com/devk03/portfolio-website">This website!</a>
+            </p>
             <p className={styles.paragraph}>
                 <a href="https://github.com/devk03/Meetup_Manager">Meetup Manager</a>
             </p>
