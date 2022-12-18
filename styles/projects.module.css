@@ -16,6 +16,11 @@
     color:rgb(0, 234, 255);
     transition: 0.3s;
 }
+.description{
+    color:rgb(184, 184, 184);
+    text-align: center;
+    margin: 0.5rem;
+}
 .showCourses{
     display: flex;
     justify-content: center;
