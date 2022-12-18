@@ -23,10 +23,10 @@ const Projects = () => {
                 <a href="https://github.com/devk03/CV-Object_Detection">CV Object Detection</a>
             </p>
             <p className={styles.paragraph}>
-                <a>Dynamic Expense Tracker - In Progress</a>
+                <a href="https://github.com/devk03/CandyLandUX">Candy Land</a>
             </p>
             <p className={styles.paragraph}>
-                <a href="https://github.com/devk03/CandyLandUX">Candy Land</a>
+                <a href="https://github.com/devk03/stock_analytics">Stock Analytics - In progress</a>
             </p>
           </header>
         </Fragment>
