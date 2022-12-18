@@ -10,6 +10,11 @@
     margin: 0.5rem;
     font-weight: bold;
     text-align: center;
+    transition: 0.3s;
+}
+.paragraph:hover{
+    color:rgb(0, 234, 255);
+    transition: 0.3s;
 }
 .showCourses{
     display: flex;
