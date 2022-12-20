@@ -7,6 +7,7 @@
 }
 .paragraph {
     margin: 0.5rem;
+    color:white;
 }
 .showCourses{
     display: flex;
