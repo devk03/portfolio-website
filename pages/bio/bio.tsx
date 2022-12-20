@@ -9,6 +9,9 @@ const Bio = () => {
         <p className={styles.basicDescription}>
           Computer Scientist / Mathematician @ The University of Michigan
         </p>
+        <p className={styles.basicDescription}>
+          Incoming Software Engineering Intern @ SkySpecs
+        </p>
         <div>
           <a className={styles.links} href="Kunjadia_resume.pdf" download>
             &#x2770; Resume &#x2771;

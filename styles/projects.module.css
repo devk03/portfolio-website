@@ -41,6 +41,9 @@
     cursor: pointer;
     transition: 0.3s;
 }
+.project{
+    color:white;
+}
 @media screen and (max-width: 480px) {
     .box {
         background-color: rgb(20, 0, 51);
