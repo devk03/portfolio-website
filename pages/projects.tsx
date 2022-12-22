@@ -18,7 +18,7 @@ const Projects = () => {
               className={styles.project}
               href="https://github.com/devk03/portfolio-website"
             >
-              This website!
+              This Website!
             </a>
           </p>
           <p className={styles.description}>
@@ -58,9 +58,20 @@ const Projects = () => {
           <p className={styles.paragraph}>
             <a
               className={styles.project}
+              href="https://github.com/void-tech-um/mthrift"
+            >
+              MThrift (VOID TECH) - In Progress
+            </a>
+          </p>
+          <p className={styles.description}>
+            react native, javaScript, node.js, express, postgreSQL
+          </p>
+          <p className={styles.paragraph}>
+            <a
+              className={styles.project}
               href="https://github.com/devk03/stock_analytics"
             >
-              Stock Analytics - In progress
+              Stock Analytics - In Progress
             </a>
           </p>
           <p className={styles.description}>
