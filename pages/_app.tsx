@@ -7,7 +7,6 @@ import Projects from "./projects";
 import Bio from "./bio";
 import Instagram from "./socialMedia/instagram";
 export default function App({ Component, pageProps }: AppProps) {
-  <script src="https://cdn.tailwindcss.com"></script>
   return (
     <Fragment>
       <title>Dev Kunjadia</title>
