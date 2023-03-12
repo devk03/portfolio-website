@@ -21,3 +21,4 @@ const Links = () => {
     </Fragment>
   );
 };
+export default Links;
