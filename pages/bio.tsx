@@ -5,7 +5,7 @@ const Bio = () => {
     <div>
       <div className="flex justify-center px-[9%] pt-[15%]">
         <div className="flex flex-col rounded-lg bg-white shadow-xl dark:bg-zinc-900 md:max-w-xxl md:flex-row">
-          <img
+          <Image
             className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-[30%] md:rounded-none md:rounded-l-lg"
             src="/bio.png"
             alt="Wrestling photo"
