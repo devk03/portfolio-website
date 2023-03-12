@@ -1,96 +1,14 @@
 import React, { useState } from "react";
-import styles from "../styles/projects.module.css";
 import { Fragment } from "react";
 const Projects = () => {
-  const [projectsShowing, setProjectsShowing] = useState(false);
-  if (projectsShowing) {
-    return (
-      <Fragment>
-        <button
-          className={styles.showCourses}
-          onClick={() => setProjectsShowing(false)}
-        >
-          Hide Projects
-        </button>
-        <header className={styles.box}>
-          <p className={styles.paragraph}>
-            <a
-              className={styles.project}
-              href="https://github.com/devk03/portfolio-website"
-            >
-              This Website!
-            </a>
-          </p>
-          <p className={styles.description}>
-            next.js, typeScript, react.js, css, node.js
-          </p>
-          <p className={styles.paragraph}>
-            <a
-              className={styles.project}
-              href="https://github.com/devk03/Meetup_Manager"
-            >
-              Meetup Manager
-            </a>
-          </p>
-          <p className={styles.description}>
-            next.js, javaScript, react.js, css, node.js, mongoDB
-          </p>
-          <p className={styles.paragraph}>
-            <a
-              className={styles.project}
-              href="https://github.com/devk03/CV-Object_Detection"
-            >
-              CV Object Detection
-            </a>
-          </p>
-          <p className={styles.description}>
-            numpy, cv2, python3, computational geometry
-          </p>
-          <p className={styles.paragraph}>
-            <a
-              className={styles.project}
-              href="https://github.com/devk03/CandyLandUX"
-            >
-              Candy Land
-            </a>
-          </p>
-          <p className={styles.description}>html, css, bootstrap</p>
-          <p className={styles.paragraph}>
-            <a
-              className={styles.project}
-              href="https://github.com/void-tech-um/mthrift"
-            >
-              MThrift (VOID TECH) - In Progress
-            </a>
-          </p>
-          <p className={styles.description}>
-            react native, javaScript, node.js, express, postgreSQL
-          </p>
-          <p className={styles.paragraph}>
-            <a
-              className={styles.project}
-              href="https://github.com/devk03/stock_analytics"
-            >
-              Stock Analytics - In Progress
-            </a>
-          </p>
-          <p className={styles.description}>
-            python3, parsel, time, web scraping
-          </p>
-        </header>
-      </Fragment>
-    );
-  } else {
-    return (
-      <Fragment>
-        <button
-          className={styles.showCourses}
-          onClick={() => setProjectsShowing(true)}
-        >
-          Display Projects
-        </button>
-      </Fragment>
-    );
-  }
+  return (
+    <Fragment>
+      <div className="flex flex-col pt-[10%] m-auto p-auto">
+        <h1 className="flex pb-10 text-6xl lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-zinc-900-800 justify-center">
+          Checkout My Projects
+        </h1>
+      </div>
+    </Fragment>
+  );
 };
 export default Projects;

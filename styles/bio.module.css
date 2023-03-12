@@ -1,28 +1,3 @@
-.box {
-  background-color: rgb(20, 0, 51);
-  border: 2px solid #ccc;
-  border-radius: 0.5em;
-  padding:1em 2em 1em 2em;
-  margin: 1.5em;
-  text-align: center;
-}
-.name {
-  font-size: 3em;
-  font-weight: bold;
-  margin: 0;
-  color:rgb(0, 234, 255);
-}
-.basicDescription{
-    font-size: 1.5em;
-    margin: 0.5em 0em 0.5em 0em;
-    color:rgb(204, 204, 204);
-}
-.links {
-    font-size: 2em;
-    color: rgb(255, 255, 255);
-    transition: 1s;
-}
-.links:hover {
-    color: rgb(0, 234, 255);
-    transition: 1s;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
