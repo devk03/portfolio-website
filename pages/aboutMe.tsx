@@ -1,14 +1,47 @@
 import React from "react";
-import styles from "../styles/aboutMe.module.css";
+import { Link } from "react-router-dom";
+import Image from "next/image";
+
 const AboutMe = () => {
-    return (
-        <div className={styles.box}>
-            <h2 className={styles.aboutMe}>About Me</h2>
-            <p className={styles.p}>Hi! My name is Dev Kunjadia. I am a student at the University of Michigan 
-            studying Computer Science and Mathematics. I am seeking roles in software engineering, 
-            quantitative trading, and machine learning. For fun I like to play chess, play poker, weight train, read, wrestle, and listen to music! 
-            Feel free to email me at devk@umich.edu for any professional inquiries.</p>
-        </div>
-    )
-}
+  return (
+    <div className="h-screen">
+      <p className="text-9xl text-center pt-[10%] font-extrabold	">
+        Dev Kunjadia
+      </p>
+      <p className="font-bold text-5xl text-center pt-5">
+        Logician. Athlete. Builder. Artist.
+      </p>
+      <p className="font-semibold text-2xl text-center pt-5">
+        Student @ The University of Michigan <br></br> Software Engineering
+        Intern @ SkySpecs
+      </p>
+      <div className="justify-center object-scale-down flex pt-10">
+        <a href="Kunjadia_resume.pdf" download>
+          <Image
+            src="/links/cv.png"
+            alt="Link to download my Resume"
+            width={100}
+            height={100}
+          />
+        </a>
+        <a href="https://github.com/devk03">
+          <Image
+            src="/links/github.png"
+            alt="Link to my Github"
+            width={100}
+            height={100}
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/dev-kunjadia/">
+          <Image
+            src="/links/linkedin.png"
+            alt="Link to my LinkedIn"
+            width={100}
+            height={100}
+          />
+        </a>
+      </div>
+    </div>
+  );
+};
 export default AboutMe;
