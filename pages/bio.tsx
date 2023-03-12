@@ -1,13 +1,16 @@
 import React from "react";
+import Image from "next/image";
 const Bio = () => {
   return (
     <div>
       <div className="flex justify-center px-[9%] pt-[15%]">
         <div className="flex flex-col rounded-lg bg-white shadow-xl dark:bg-zinc-900 md:max-w-xxl md:flex-row">
-          <img
+          <Image
             className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-[30%] md:rounded-none md:rounded-l-lg"
-            src="bio.png"
+            src="/bio.png"
             alt="Wrestling photo"
+            width={1000}
+            height={1000}
           />
           <div className="flex flex-col justify-start p-10">
             <h5 className="mb-2 pb-3 font-bold text-6xl text-neutral-800 dark:text-neutral-50">
