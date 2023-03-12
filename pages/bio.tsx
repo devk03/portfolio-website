@@ -13,16 +13,16 @@ const Bio = () => {
             height={1000}
           />
           <div className="flex flex-col justify-start p-10">
-            <h5 className="mb-2 pb-3 font-bold text-6xl text-neutral-800 dark:text-neutral-50">
-              Hi, I'm Dev Kunjadia.
+            <h5 className="mb-2 pb-3 font-bold text-7xl text-neutral-800 dark:text-neutral-50">
+              Hi, I&apos;m Dev Kunjadia.
             </h5>
-            <p className="mb-4 text-2xl text-neutral-600 dark:text-neutral-200">
-              I'm a student at the University of Michigan studying Computer
+            <p className="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+              I&apos;m a student at the University of Michigan studying Computer
               Science and Mathematics. I am seeking roles in software
               engineering, quantitative trading, and machine learning.
             </p>
-            <p className="mb-4 text-2xl text-neutral-600 dark:text-neutral-200">
-              I am a man of many interests. For fun I like to study philosophy,
+            <p className="mb-4 text-3xl text-neutral-600 dark:text-neutral-200">
+              For fun I like to study philosophy,
               weight train, run, play chess, wrestle, and play the ukelele.
             </p>
             <p className="text-xs text-neutral-500 dark:text-neutral-300">
