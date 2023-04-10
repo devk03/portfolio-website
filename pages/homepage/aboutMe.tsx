@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Image from "next/image";
 
 const AboutMe = () => {
   return (
-    <div className="h-screen">
-      <p className="text-9xl text-center pt-[10%] font-extrabold	">
+    <div>
+      <p className="text-9xl text-center font-extrabold	">
         Dev Kunjadia
       </p>
       <p className="font-bold text-5xl text-center pt-5">
