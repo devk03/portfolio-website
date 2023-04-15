@@ -1,43 +1,38 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Courses from "./courses";
+import Courses from "./homepage/courses";
 import { Fragment } from "react";
-import AboutMe from "./aboutMe";
-import Projects from "./projects";
-import Bio from "./bio";
-import Instagram from "./socialMedia/instagram";
+import AboutMe from "./homepage/aboutMe";
+import Bio from "./homepage/bio";
+import Blog from "./homepage/blog";
+import Head from "next/head";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
-      <title>Dev Kunjadia</title>
-      <header className="text-2xl py-4 bg-zinc-900 text-center text-white sticky top-0">
-        <a href="#bio" className="px-5">
-          About Me
-        </a>
-        <a href="#contact" className="px-5">
-          Contact
-        </a>
-        <a href="#projects" className="px-5">
-          Projects
-        </a>
-        <a href="#contact" className="px-5">
-          Courses
-        </a>
+      <Head>
+        <title>Dev Kunjadia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <header className="z-10 text-xl md:text-2xl py-4 bg-zinc-900 text-center text-white sticky top-0">
+        <nav className="flex flex-wrap justify-center px-2">
+          <a href="#contact" className="px-2 py-1">
+            Contact
+          </a>
+          <a href="#bio" className="px-2 py-1">
+            About Me
+          </a>
+        </nav>
       </header>
-      <div className="snap-y snap-mandatory">
-        <div className="snap-always snap-center h-screen w-screen bg-sky-200">
+      <div className="snap-y snap-mandatory h-screen min-w-full overflow-auto">
+        <div className="snap-start flex items-center justify-center min-h-screen min-w-full bg-sky-100">
+          <a id="contact">
             <AboutMe />
-        </div>
-        <div className="snap-always snap-center h-screen w-screen bg-sky-300">
-          <a id="bio">
-            <Bio />
           </a>
         </div>
-        <div className="snap-always snap-center h-screen w-screen bg-sky-400">
-          <a id="projects">
-            <object>
-              <Projects/>
-            </object>
+        <div className="snap-start flex items-center justify-center min-h-screen min-w-full bg-sky-200">
+          <a id="bio">
+            <Bio />
           </a>
         </div>
       </div>
