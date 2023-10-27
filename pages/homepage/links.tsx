@@ -1,7 +1,6 @@
 //set up function react component
 import React from "react";
 import { Fragment } from "react";
-//keep going
 const Links = () => {
   return (
     <Fragment>
