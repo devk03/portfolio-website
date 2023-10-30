@@ -1,11 +1,12 @@
 import React from 'react'
-
-const blog = () => {
+import { useEffect } from 'react'
+import BlogForm from '../components/blogForm'
+const Blog = () => {
   return (
     <div>
-      Hello this is the start of my blog :)
+      <BlogForm />
     </div>
   )
 }
 
-export default blog
+export default Blog
