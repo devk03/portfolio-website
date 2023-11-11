@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
-import BlogForm from '../components/blogForm'
+import BlogForm from '../../components/blogForm'
+import {db} from '../../firebase';
 const Blog = () => {
   return (
     <div>
-      <BlogForm />
+      Load posts here
     </div>
   )
 }

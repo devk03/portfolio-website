@@ -1,8 +1,10 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import dynamic from 'next/dynamic';
-
+import {collection, addDoc} from 'firebase/firestore';
+import {db} from '../firebase';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import 'react-quill/dist/quill.snow.css';
+import { useEffect } from 'react';
 
 interface FormData {
   timestamp: string;
@@ -11,6 +13,7 @@ interface FormData {
 }
 
 const MyForm: React.FC = () => {
+
   const [formData, setFormData] = useState<FormData>({
     timestamp: new Date().toISOString(),
     header: '',
@@ -34,7 +37,21 @@ const MyForm: React.FC = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(formData);
+    addPost();
   };
+
+  async function addPost() {
+    try {
+      const docRef = await addDoc(collection(db, "posts"), {
+        header: formData.header,
+        content: formData.content,
+        timeStamp: formData.timestamp,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit}>
