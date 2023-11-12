@@ -8,22 +8,26 @@ interface Post {
   id: string;
   content: string;
   header: string;
-  // include other fields you expect to have
+  // for future reference if you want to add more fields add them here
 }
 
 const Blog = () => {
   const [posts, setPosts] = useState<Post[]>([]); // Use the Post interface
 
   useEffect(() => {
-    const colRef = collection(db, 'posts');
-
-    getDocs(colRef)
+    // Get all posts from the database
+    const postRef = collection(db, 'posts');
+    
+    // Get all documents in the posts collection
+    getDocs(postRef)
       .then((snapshot) => {
         const postsData: Post[] = []; // Use the Post interface
         snapshot.forEach((doc: DocumentData) => {
           const postData = { id: doc.id, ...doc.data() } as Post; // Cast to the Post type
           postsData.push(postData);
         });
+
+        // Set the posts state to the array of posts
         setPosts(postsData);
       })
       .catch((error) => {
@@ -38,6 +42,8 @@ const Blog = () => {
 
   return (
     <div>
+      <h1>Blog</h1>
+      {/* Loop through all posts and display them */}
       {posts.map((post: Post) => (
         <div key={post.id}>
           <h2>{post.header}</h2>
