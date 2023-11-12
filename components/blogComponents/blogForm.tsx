@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import dynamic from 'next/dynamic';
 import {collection, addDoc} from 'firebase/firestore';
-import {db} from '../firebase';
+import {db} from '../../firebase';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import 'react-quill/dist/quill.snow.css';
 import { useEffect } from 'react';
