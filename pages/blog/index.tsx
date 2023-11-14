@@ -4,6 +4,7 @@ import { collection, getDocs, DocumentData } from "firebase/firestore";
 import DOMPurify from "dompurify";
 import BlogPeekerPost from "../../components/blogComponents/blogPeekerPost";
 import router from "next/router";
+import Link from "next/link";
 // Define the structure of a post object
 interface Post {
   id: string;
@@ -45,41 +46,34 @@ const Blog = () => {
   return (
     <>
       <title>Blog</title>
-      <header className="z-10 text-xl md:text-2xl py-4 bg-zinc-900 text-center text-white sticky top-0">
-        <div className="flex flex-wrap justify-center px-2">
-          <a href="#contact" className="px-2 py-1">
-            Contact
-          </a>
-          <a href="#bio" className="px-2 py-1">
-            About Me
-          </a>
-          <button
-            className="px-2 py-1"
-            type="button"
-            onClick={() => router.push("/blog")}
-          >
-            Blog
-          </button>
-          <button
-            className="px-2 py-1"
-            type="button"
-            onClick={() => router.push("/login")}
-          >
-            Login
-          </button>
+      <div className="bg-sky-200">
+        <header className="z-10 text-xl md:text-2xl py-4 bg-zinc-900 text-center text-white sticky top-0">
+          <div className="flex flex-wrap justify-center px-2">
+            <button
+              className="px-2 py-1"
+              type="button"
+              onClick={() => router.push("/")}
+            >
+              Home
+            </button>
+            <button
+              className="px-2 py-1"
+              type="button"
+              onClick={() => router.push("/login")}
+            >
+              Login
+            </button>
+          </div>
+        </header>
+        <h1 className="text-5xl font-bold text-center py-10">Welcome to My Blog!</h1>
+        <div>
+          {/* Loop through all posts and display them */}
+          {posts.map((post: Post) => (
+            <Link href={`/blog/${post.id}`} key={post.id}>
+              <BlogPeekerPost header={post.header} id={post.id} />
+            </Link>
+          ))}
         </div>
-      </header>
-      <div>
-        <h1 className="text-3xl font-bold">Blog</h1>
-        {/* Loop through all posts and display them */}
-        {posts.map((post: Post) => (
-          <>
-            <BlogPeekerPost
-              header={post.header}
-              id={post.id}
-            />
-          </>
-        ))}
       </div>
     </>
   );

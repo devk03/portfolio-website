@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </header>
       <div className="snap-y snap-mandatory h-screen min-w-full overflow-auto">
         <div className="snap-start flex items-center justify-center min-h-screen min-w-full bg-sky-100">
-          <div id="contact">
+          <div id="contact" className="mb-20">
             <AboutMe />
           </div>
         </div>
