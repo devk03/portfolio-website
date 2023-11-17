@@ -4,9 +4,12 @@ import AboutMe from "./homepage/aboutMe";
 import Bio from "./homepage/bio";
 import Head from "next/head";
 import { useRouter } from "next/router";
-
+import { useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase"; // Import your Firebase auth instance
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const router = useRouter();
+
   return (
     <Fragment>
       <Head>
@@ -21,11 +24,19 @@ export default function App({ Component, pageProps }: AppProps) {
           <a href="#bio" className="px-2 py-1">
             About Me
           </a>
-          <button className="px-2 py-1" type="button" onClick={() => router.push('/blog')}>
+          <button
+            className="px-2 py-1"
+            type="button"
+            onClick={() => router.push("/blog")}
+          >
             Blog
           </button>
-          <button className="px-2 py-1" type="button" onClick={() => router.push('/login')}>
-            Login
+          <button
+            className="px-2 py-1"
+            type="button"
+            onClick={() => router.push("/login")}
+          >
+            Admin-Login
           </button>
         </div>
       </header>

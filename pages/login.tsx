@@ -1,13 +1,15 @@
 import React from 'react';
 import { auth } from '../firebase';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-
+import { useRouter } from 'next/router';
 const Login = () => {
+  const router = useRouter();
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
       // Handle successful sign-in here (e.g., redirect to a dashboard page)
+      router.push('/');
     } catch (error) {
       // Handle errors here, such as displaying an error message
       console.error("Error signing in with Google: ", error);
