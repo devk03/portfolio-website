@@ -4,7 +4,6 @@ import {collection, addDoc} from 'firebase/firestore';
 import {db} from '../../firebase';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import 'react-quill/dist/quill.snow.css';
-import { useEffect } from 'react';
 
 interface FormData {
   timestamp: string;
