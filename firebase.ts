@@ -1,30 +1,21 @@
-/*
-THIS IS WHERE FIREBASE IS INITIALIZED
-*/
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// This code is all gitignored, to protect my private keys
-
-// Adds the Firestore SDK
+import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import firebase from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCEtZ2X-eJJhWXxhb1Oqi0Eep7W61xnllA",
-  authDomain: "personal-3d666.firebaseapp.com",
-  databaseURL: "https://personal-3d666-default-rtdb.firebaseio.com",
-  projectId: "personal-3d666",
-  storageBucket: "personal-3d666.appspot.com",
-  messagingSenderId: "1090668948509",
-  appId: "1:1090668948509:web:9bd040d0c4f49fd656aaf4",
-  measurementId: "G-6BXMSXCBYM"
-};
+// Check if a Firebase instance already exists. If not, create one.
+if (!getApps().length) {
+  initializeApp({
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID,
+  });
+}
+console.log(process.env.FIREBASE_API_KEY);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize the Database, and then export it
-export const db = getFirestore(app);
-export const auth = getAuth(app);
+export const db = getFirestore();
+export const auth = getAuth();
