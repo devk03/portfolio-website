@@ -1,9 +1,11 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { getFirestore, deleteDoc, doc, getDoc} from "firebase/firestore";
 import { db } from "../../firebase";
 import DOMPurify from "dompurify";
 import { extractTimeAndDate } from "../../components/blogComponents/timeStamp";
+import { auth } from "../../firebase"; // Import your Firebase auth instance
+import { onAuthStateChanged } from "firebase/auth";
 
 type BlogPost = {
   id: string;
@@ -13,11 +15,33 @@ type BlogPost = {
 };
 
 const BlogPostPage = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
   const { post_id } = router.query;
   const [post, setPost] = useState<BlogPost | null>(null);
   const [timeStamp, setTimeStamp] = useState<any>("");
 
+  const HandleDelete = async (post_id:string) => {
+    try {
+      await deleteDoc(doc(db, "posts", post_id));
+      console.log("Document successfully deleted!");
+      router.push("/blog");
+    } catch (error) {
+      console.error("Error removing document: ", error);
+    }
+  };
+  useEffect(() => {
+    // Subscribe to auth state changes
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
+        const email = user.email;
+        if (email === "dtkunjadia@gmail.com") {
+          setIsAdmin(true);
+        }
+      }
+    });
+  }, []);
   const createMarkup = (htmlContent: string) => {
     return { __html: DOMPurify.sanitize(htmlContent) };
   };
@@ -78,14 +102,21 @@ const BlogPostPage = () => {
       </header>
       <h1 className="text-4xl font-bold text-center my-8">{post.header}</h1>
       <p className="text-2xl font-bold text-center my-8">{timeStamp["date"]}</p>
-  
+
       <div
         dangerouslySetInnerHTML={createMarkup(post.content)}
         className="mx-auto p-5 max-w-4xl bg-white shadow-lg rounded-lg my-10"
       />
+      {isAdmin && (
+        <div className="flex items-center">
+          <button className="bg-red-500 shadow-lg mx-auto hover:bg-red-700 text-white font-bold p-2 rounded"
+          onClick={()=>HandleDelete(post_id)}>
+            Delete
+          </button>
+        </div>
+      )}
     </div>
   );
-  
 };
 
 export default BlogPostPage;

@@ -3,20 +3,18 @@ import BlogForm from "../../components/blogComponents/blogForm";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase"; // Import your Firebase auth instance
 import { useRouter } from "next/router";
+
 const Blog = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
   useEffect(() => {
     // Subscribe to auth state changes
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        const uid = user.uid;
         const email = user.email;
         if (email === "dtkunjadia@gmail.com") {
           setIsAdmin(true);
-        } else {
-          router.push("/");
         }
       } else {
         router.push("/login");
@@ -35,7 +33,10 @@ const Blog = () => {
       <>
         <title>Blog</title>
         <div className="flex justify-center items-center h-screen bg-gray-100">
-          <p className="text-2xl">You are not authorized to view this page.</p>
+          <p className="text-2xl">
+            you are not authorized to view this page, please login with the
+            correct google credentials :D
+          </p>
         </div>
       </>
     );
