@@ -12,6 +12,7 @@ interface Post {
   id: string;
   content: string;
   header: string;
+  timeStamp: string;
   // for future reference if you want to add more fields add them here
 }
 
@@ -100,15 +101,18 @@ const Blog = () => {
               Make A New Post
             </button>
           )}
-          {posts.map((post: Post) => (
-            <Link href={`/blog/${post.id}`} key={post.id}>
-              <BlogPeekerPost
-                header={post.header}
-                id={post.id}
-                admin={isAdmin}
-              />
-            </Link>
-          ))}
+         {posts
+  .sort((a, b) => new Date(b.timeStamp).getTime() - new Date(a.timeStamp).getTime()) // Sorting by timeStamp
+  .map((post: Post) => (
+    <Link href={`/blog/${post.id}`} key={post.id}>
+      <BlogPeekerPost
+        header={post.header}
+        id={post.id}
+        admin={isAdmin}
+      />
+    </Link>
+  ))
+}
         </div>
       </div>
     </>
