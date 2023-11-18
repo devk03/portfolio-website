@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getFirestore, deleteDoc, doc, getDoc} from "firebase/firestore";
+import { getFirestore, deleteDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import DOMPurify from "dompurify";
 import { extractTimeAndDate } from "../../components/blogComponents/timeStamp";
@@ -21,7 +21,7 @@ const BlogPostPage = () => {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [timeStamp, setTimeStamp] = useState<any>("");
 
-  const HandleDelete = async (post_id:string) => {
+  const HandleDelete = async (post_id: string) => {
     try {
       await deleteDoc(doc(db, "posts", post_id));
       console.log("Document successfully deleted!");
@@ -109,8 +109,16 @@ const BlogPostPage = () => {
       />
       {isAdmin && (
         <div className="flex items-center">
-          <button className="bg-red-500 shadow-lg mx-auto hover:bg-red-700 text-white font-bold p-2 rounded"
-          onClick={()=>HandleDelete(post_id)}>
+          <button
+            className="bg-red-500 shadow-lg mx-auto hover:bg-red-700 text-white font-bold p-2 rounded"
+            onClick={() => {
+              // Convert post_id to string if it is not undefined or an array
+              const postId = Array.isArray(post_id) ? post_id[0] : post_id;
+              if (postId) {
+                HandleDelete(postId);
+              }
+            }}
+          >
             Delete
           </button>
         </div>
