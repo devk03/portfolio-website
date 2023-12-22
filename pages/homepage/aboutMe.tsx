@@ -11,13 +11,13 @@ const AboutMe = () => {
         Logician. Athlete. Builder. Artist.
       </div>
       <div className="text-xl sm:text-2xl text-center py-4">
-        <div className="font-bold">
-          Student @ The University of Michigan
-          <br /> Incoming Software Engineering Intern @ <a href="https://www.capitalone.com/about/">Capital One</a>
-        </div>
-        <br /> Prev. Software Engineering Intern @ <a href="https://skyspecs.com/about">SkySpecs</a>
-        <br /> Prev. Finance Intern @ <a href="https://www.magna.com/company/company-information">Magna</a>
-        <br /> Prev. Product Management Intern @ <a href="https://volcone.com/about">Volcone</a>
+        <div className="font-bold">Student @ The University of Michigan</div>
+        <br /> Prev. Software Engineering Intern @{" "}
+        <a href="https://skyspecs.com/about">SkySpecs</a>
+        <br /> Prev. Finance Intern @{" "}
+        <a href="https://www.magna.com/company/company-information">Magna</a>
+        <br /> Prev. Product Management Intern @{" "}
+        <a href="https://volcone.com/about">Volcone</a>
       </div>
       <div className="flex flex-wrap justify-center items-center pt-10 space-x-4">
         <a
