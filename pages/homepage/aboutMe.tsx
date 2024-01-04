@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Typewriter from "typewriter-effect";
 
 const AboutMe = () => {
   return (
@@ -7,8 +8,22 @@ const AboutMe = () => {
       <div className="text-6xl sm:text-8xl lg:text-9xl text-center font-extrabold py-4">
         Dev Kunjadia
       </div>
+
       <div className="font-bold text-2xl sm:text-4xl lg:text-5xl text-center py-2">
-        Logician. Athlete. Builder. Artist.
+        <Typewriter
+          options={{
+            strings: [
+              "Logician.",
+              "Athlete.",
+              "Builder.",
+              "Artist.",
+              "Mathematician.",
+              "Musician.",
+            ],
+            autoStart: true,
+            loop: true,
+          }}
+        />
       </div>
       <div className="text-xl sm:text-2xl text-center py-4">
         <div className="font-bold">Student @ The University of Michigan</div>
