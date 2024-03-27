@@ -29,7 +29,7 @@ const AboutMe = () => {
         <div className="font-bold">Student @ The University of Michigan</div>
         <br /> Prev. Software Engineering Intern @{" "}
         <a href="https://skyspecs.com/about">SkySpecs</a>
-        <br /> Prev. Finance Intern @{" "}
+        <br /> Prev. Software Engineering Intern @{" "}
         <a href="https://www.magna.com/company/company-information">Magna</a>
         <br /> Prev. Product Management Intern @{" "}
         <a href="https://volcone.com/about">Volcone</a>
