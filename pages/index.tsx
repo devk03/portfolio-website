@@ -169,7 +169,12 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </main >
+
+        <div className="absolute bottom-4 right-4 text-sm text-emerald-400 font-inter z-10 flex items-center gap-2">
+          Status: Up
+          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+        </div>
+      </main>
     </>
   );
 };
