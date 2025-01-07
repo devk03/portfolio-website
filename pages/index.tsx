@@ -105,6 +105,15 @@ const Home: NextPage = () => {
       image: "/employment/skyspecs.png"
     },
     {
+      company: "Magna",
+      role: "software engineering",
+      link: "https://www.magna.com",
+      description: [
+        "optimized a massive renewable asset management platform and wrote a lot of react"
+      ],
+      image: "/employment/magna.png"
+    },
+    {
       company: "Volcone",
       role: "product management, software engineering",
       link: "https://volcone.com",
@@ -165,6 +174,21 @@ const Home: NextPage = () => {
       <Head>
         <title>Dev Kunjadia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Dev Kunjadia - Software Engineer and Student at University of Michigan" />
+
+        {/* Open Graph / Social Media Meta Tags */}
+        <meta property="og:title" content="Dev Kunjadia" />
+        <meta property="og:description" content="Engineering + Product + Design" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://kunjadia.dev" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dev Kunjadia" />
+        <meta name="twitter:description" content="Engineering + Product + Design" />
+        <meta name="twitter:image" content="/og-image.png" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet" />
@@ -269,12 +293,12 @@ const Home: NextPage = () => {
         <div className={`transform transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10 max-w-3xl w-full`}>
           <div className="space-y-8">
             <h1 className="text-5xl sm:text-5xl text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 font-electrolize before:absolute before:content-['Dev_Kunjadia'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
-              Dev Kunjadia
+              Hi, I'm Dev!
             </h1>
 
             <div className="text-xl text-white/100 space-y-4 text-left">
               <p>i'm a software engineer studying CS + Math at the University of Michigan.</p>
-              <p>i'm interesting in how engineering, design, and product level thinking can be combined to create intutitive solutions for complex problems.</p>
+              <p>i'm interested in how engineering, design, and product level thinking can be combined to create intutitive solutions for complex problems.</p>
               <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-emerald-400">devk@umich.edu</Link> or any of my socials.</p>
             </div>
           </div>
