@@ -109,7 +109,7 @@ const Home: NextPage = () => {
       role: "software engineering",
       link: "https://www.magna.com",
       description: [
-        "optimized a massive renewable asset management platform and wrote a lot of react"
+        "wrote lots of c++ to optimize component communication in vehicle dashbaords"
       ],
       image: "/employment/magna.png"
     },
@@ -125,14 +125,13 @@ const Home: NextPage = () => {
   ];
 
   const projects: ProjectType[] = [
-    {
-      title: "portfolio website",
-      description: "a modern portfolio built with next.js and tailwindcss",
-      image: "/projects/portfolio.png",
-      githubLink: "https://github.com/yourusername/portfolio",
-      liveLink: "https://yourwebsite.com",
-      technologies: ["next.js", "typescript", "tailwindcss"]
-    }
+    // {
+    //   title: "DulanyAI",
+    //   description: "an open-source ai tool to quickly research patents",
+    //   image: "/projects/dulanyai.png",
+    //   githubLink: "https://github.com/yourusername/portfolio",
+    //   technologies: ["next.js", "typescript", "sass", "flask", "python"]
+    // }
   ];
 
   const coolShit: CoolShitType[] = [
