@@ -190,11 +190,11 @@ const Home: NextPage = () => {
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
       </Head>
 
       {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-center items-center px-6 font-electrolize relative bg-gradient-to-b from-black via-black to-transparent">
+      <section className="h-screen flex flex-col justify-center items-center px-6 font-crimson relative bg-gradient-to-b from-[#F5F5DC] via-[#F5F5DC] to-transparent">
         <Particles
           id="tsparticles"
           init={particlesInit}
@@ -203,16 +203,16 @@ const Home: NextPage = () => {
             fullScreen: false,
             background: {
               color: {
-                value: "#000000",
+                value: "#F5F5DC",
               },
             },
             fpsLimit: 120,
             particles: {
               color: {
-                value: ["#60A5FA", "#34D399", "#FFFFFF"],
+                value: ["#8B4513", "#D2691E", "#A0522D"],
               },
               links: {
-                color: "#ffffff",
+                color: "#8B4513",
                 distance: 150,
                 enable: true,
                 opacity: 0.3,
@@ -225,12 +225,12 @@ const Home: NextPage = () => {
                   default: "bounce",
                 },
                 random: false,
-                speed: 2,
+                speed: 1,
                 straight: false,
                 trail: {
                   enable: true,
                   length: 3,
-                  fillColor: "#000000",
+                  fillColor: "#F5F5DC",
                 },
               },
               number: {
@@ -287,30 +287,30 @@ const Home: NextPage = () => {
           className="absolute inset-0 w-full h-full"
         />
 
-        <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-b from-black/35 via-black/20 to-black" />
+        <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-b from-[#F5F5DC]/35 via-[#F5F5DC]/20 to-[#F5F5DC]" />
 
         <div className={`transform transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10 max-w-3xl w-full`}>
           <div className="space-y-8">
-            <h1 className="text-5xl sm:text-5xl text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 font-electrolize before:absolute before:content-['Dev_Kunjadia'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
+            <h1 className="text-5xl sm:text-5xl text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 font-crimson before:absolute before:content-['Dev_Kunjadia'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
               Hi, I'm Dev!
             </h1>
 
-            <div className="text-xl text-white/100 space-y-4 text-left">
+            <div className="text-xl text-[#4A2511] space-y-4 text-left">
               <p>i'm a software engineer studying CS + Math at the University of Michigan.</p>
               <p>i'm interested in how engineering, design, and product level thinking can be combined to create intutitive solutions for complex problems.</p>
-              <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-emerald-400">devk@umich.edu</Link> or any of my socials.</p>
+              <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-[#8B4513]">devk@umich.edu</Link> or any of my socials.</p>
             </div>
           </div>
         </div>
 
-        <div className="fixed bottom-4 right-4 text-sm text-emerald-400 font-electrolize z-50 flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-sm">
+        <div className="fixed bottom-4 right-4 text-sm text-[#4A2511] font-crimson z-50 flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-sm">
           Status:
-          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+          <div className="w-2 h-2 rounded-full bg-[#4A2511] animate-pulse"></div>
         </div>
 
         <div className="fixed md:left-4 md:top-1/2 md:-translate-y-1/2 top-4 left-0 right-0 md:right-auto flex flex-row md:flex-col items-center justify-center md:justify-center gap-4 z-50">
           <Link href="https://github.com/devk03"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-zinc-300 hover:text-emerald-400 backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -320,7 +320,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://kunjadia.substack.com/"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-zinc-300 hover:text-emerald-400 backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[24px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -330,7 +330,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://www.linkedin.com/in/dev-kunjadia/"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-zinc-300 hover:text-emerald-400 backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -340,7 +340,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://twitter.com/dev_kunjadia"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-zinc-300 hover:text-emerald-400 backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -350,7 +350,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://www.tiktok.com/@real_kunjadia"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-zinc-300 hover:text-emerald-400 backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -360,7 +360,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://www.youtube.com/@devkunjadia3792"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-zinc-300 hover:text-emerald-400 backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -372,10 +372,10 @@ const Home: NextPage = () => {
         </div>
 
         <div className="absolute bottom-8 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-sm text-emerald-400/80">see more</span>
+          <span className="text-sm text-[#4A2511]">see more</span>
           <div className="flex flex-col -space-y-1">
             <svg
-              className="w-4 h-4 text-emerald-400/80"
+              className="w-4 h-4 text-[#4A2511]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -388,15 +388,15 @@ const Home: NextPage = () => {
       {/* See More */}
 
       {/* Main Content */}
-      <div className="bg-black text-white">
+      <div className="bg-[#F5F5DC] text-[#8B4513]">
         {/* Education Section */}
         <section className="max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20">
-          <h2 className="text-3xl font-electrolize mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 before:absolute before:content-['Education'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
+          <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Education'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             education
           </h2>
           <div className="space-y-8">
             {education.map((edu, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-electrolize">
+              <div key={index} className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson">
                 {edu.image && (
                   <div className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0">
                     <Image
@@ -408,11 +408,11 @@ const Home: NextPage = () => {
                   </div>
                 )}
                 <div className="text-center md:text-left">
-                  <h3 className="text-xl font-semibold text-white/100">
-                    <Link href={edu.link} className="hover:underline">{edu.school}</Link>
+                  <h3 className="text-xl font-semibold text-[#4A2511]">
+                    <Link href={edu.link} className="hover:underline hover:text-[#8B4513]">{edu.school}</Link>
                   </h3>
-                  <p className="text-emerald-400">{edu.degree}</p>
-                  <p className="text-zinc-300 mt-2">{edu.description}</p>
+                  <p className="text-[#8B4513]">{edu.degree}</p>
+                  <p className="text-[#4A2511] mt-2">{edu.description}</p>
                 </div>
               </div>
             ))}
@@ -420,17 +420,17 @@ const Home: NextPage = () => {
         </section>
 
         {/* Cool Shit Section */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-800 relative z-20">
-          <h2 className="text-3xl font-electrolize mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 before:absolute before:content-['Cool_Shit'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
+        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20">
+          <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Cool_Shit'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             some stuff i've done
           </h2>
-          <div className="flex flex-col space-y-4 font-electrolize">
+          <div className="flex flex-col space-y-4 font-crimson">
             {coolShit.map((item, index) => (
-              <span key={index} className="text-white/100 text-lg">
+              <span key={index} className="text-[#4A2511] text-lg">
                 {item.link ? (
                   <Link
                     href={item.link}
-                    className="inline-flex items-center gap-2 hover:underline hover:text-emerald-400 transition-colors"
+                    className="inline-flex items-center gap-2 hover:underline hover:text-[#8B4513] transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -445,13 +445,13 @@ const Home: NextPage = () => {
         </section>
 
         {/* Experience Section */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-800 relative z-20">
-          <h2 className="text-3xl font-electrolize mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 before:absolute before:content-['Experience'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
+        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20">
+          <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Experience'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             my experiences
           </h2>
           <div className="space-y-0">
             {experience.map((exp, index) => (
-              <div key={index} className="flex items-start gap-6 p-6 font-electrolize">
+              <div key={index} className="flex items-start gap-6 p-6 font-crimson">
                 {exp.image && (
                   <div className="w-14 h-14 relative flex-shrink-0">
                     <Image
@@ -464,15 +464,15 @@ const Home: NextPage = () => {
                 )}
                 <div className="flex-grow">
                   <div className="flex md:items-center flex-col md:flex-row md:gap-2">
-                    <h3 className="text-xl font-semibold text-white/100">
-                      <Link href={exp.link} className="hover:underline hover:text-emerald-400 transition-colors">{exp.company}</Link>
+                    <h3 className="text-xl font-semibold text-[#4A2511]">
+                      <Link href={exp.link} className="hover:underline hover:text-[#8B4513] transition-colors">{exp.company}</Link>
                     </h3>
-                    <span className="text-zinc-300 hidden md:inline">•</span>
-                    <span className="text-zinc-300">{exp.role}</span>
+                    <span className="text-[#4A2511] hidden md:inline">•</span>
+                    <span className="text-[#4A2511]">{exp.role}</span>
                   </div>
                   <ul className="mt-2 space-y-1">
                     {exp.description.map((desc, i) => (
-                      <li key={i} className="text-zinc-300">{desc}</li>
+                      <li key={i} className="text-[#4A2511]">{desc}</li>
                     ))}
                   </ul>
                 </div>
@@ -481,72 +481,17 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Projects Section */}
-        {/* <section className="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-800 relative z-20">
-          <h2 className="text-3xl font-electrolize mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 before:absolute before:content-['Projects'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
-            checkout my projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="p-6 font-electrolize">
-                {project.image && (
-                  <div className="w-32 h-32 relative mb-4 flex-shrink-0">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                )}
-                <h3 className="text-xl font-semibold text-zinc-100">{project.title}</h3>
-                <p className="text-zinc-300 mt-2">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="px-2 py-1 text-sm rounded-full bg-zinc-800 text-zinc-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4 mt-4">
-                  {project.githubLink && (
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-400 hover:text-emerald-400 transition-colors"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-400 hover:text-emerald-400 transition-colors"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section> */}
-
         {/* Hobbies & Fun Section */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-zinc-800 relative z-20">
-          <h2 className="text-3xl font-electrolize mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tight relative leading-normal py-2 before:absolute before:content-['Hobbies_&_Fun'] before:inset-0 before:text-black before:blur-[30px] before:-z-10 before:opacity-50">
+        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20">
+          <h2 className="text-3xl font-crimson mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Hobbies_&_Fun'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             hobbies and fun
           </h2>
-          <div className="font-electrolize flex flex-wrap gap-4">
-            <span className="px-4 py-2 rounded-full bg-zinc-800/50 text-zinc-300">strength training</span>
-            <span className="px-4 py-2 rounded-full bg-zinc-800/50 text-zinc-300">content creation</span>
-            <span className="px-4 py-2 rounded-full bg-zinc-800/50 text-zinc-300">solo travel</span>
-            <span className="px-4 py-2 rounded-full bg-zinc-800/50 text-zinc-300">exploring tech</span>
-            <span className="px-4 py-2 rounded-full bg-zinc-800/50 text-zinc-300">community building</span>
-
+          <div className="font-crimson flex flex-wrap gap-4">
+            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">strength training</span>
+            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">content creation</span>
+            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">solo travel</span>
+            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">exploring tech</span>
+            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">community building</span>
           </div>
         </section>
       </div>

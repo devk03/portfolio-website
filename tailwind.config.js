@@ -11,9 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        playfair: ["Playfair Display", "serif"],
-        inter: ["Inter", "sans-serif"],
-        electrolize: ["Electrolize", "sans-serif"],
+        crimson: ["Crimson Text", "serif"],
       },
     },
   },
