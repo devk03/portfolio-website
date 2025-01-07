@@ -275,7 +275,7 @@ const Home: NextPage = () => {
             <div className="text-xl text-white/100 space-y-4 text-left">
               <p>i'm a software engineer studying CS + Math at the University of Michigan.</p>
               <p>i'm interesting in how engineering, design, and product level thinking can be combined to create intutitive solutions for complex problems.</p>
-              <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-emerald-400">devk@umich.edu</Link> or any of my socials in the bottom left corner.</p>
+              <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-emerald-400">devk@umich.edu</Link> or any of my socials.</p>
             </div>
           </div>
         </div>
