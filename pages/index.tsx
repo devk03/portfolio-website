@@ -79,10 +79,10 @@ const Home: NextPage = () => {
     },
     {
       company: "Milieu",
-      role: "software engineering, product management, and design",
+      role: "software engineering, product management, design",
       link: "https://milieubio.com",
       description: [
-        "created payment infra, shipping integrations, designed user experience, serum selection algorithm"
+        "created core infra, payment/shipping integrations, designed web experience, serum selection algorithm"
       ],
       image: "/employment/milieu.png"
     },
@@ -398,7 +398,7 @@ const Home: NextPage = () => {
             {education.map((edu, index) => (
               <div key={index} className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson">
                 {edu.image && (
-                  <div className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0">
+                  <div className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(74,37,17,0.25)]">
                     <Image
                       src={edu.image}
                       alt={edu.school}
@@ -453,7 +453,7 @@ const Home: NextPage = () => {
             {experience.map((exp, index) => (
               <div key={index} className="flex items-start gap-6 p-6 font-crimson">
                 {exp.image && (
-                  <div className="w-14 h-14 relative flex-shrink-0">
+                  <div className="w-14 h-14 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(74,37,17,0.25)]">
                     <Image
                       src={exp.image}
                       alt={exp.company}
