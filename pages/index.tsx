@@ -146,7 +146,7 @@ const Home: NextPage = () => {
     },
     {
       title: "got 120k+ likes and over 2m+ views on tiktok",
-      link: "https://ann-arbor.aitinkerers.org/p/ai-tinkerers-ann-arbor-september-18"
+      link: "https://www.tiktok.com/@real_kunjadia"
     },
     {
       title: "was ranked top 16 in the state of michigan for folkstyle wrestling",
