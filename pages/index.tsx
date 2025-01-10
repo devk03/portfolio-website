@@ -109,7 +109,7 @@ const Home: NextPage = () => {
       role: "software engineering",
       link: "https://www.magna.com",
       description: [
-        "wrote lots of c++ to optimize component communication in vehicle dashbaords"
+        "wrote lots of c++ to optimize component communication in vehicle dashboards"
       ],
       image: "/employment/magna.png"
     },
@@ -297,7 +297,7 @@ const Home: NextPage = () => {
 
             <div className="text-xl text-[#4A2511] space-y-4 text-left">
               <p>i'm a software engineer studying CS + Math at the University of Michigan</p>
-              <p>i'm interested in how engineering, design, and product level thinking can be combined to create intutitive solutions for complex problems</p>
+              <p>i'm interested in how engineering, design, and product level thinking can be combined to create intuitive solutions for complex problems</p>
               <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-[#8B4513]">devk[at]umich[dot]edu</Link> — i am also active on twitter and linkedin</p>
             </div>
           </div>
