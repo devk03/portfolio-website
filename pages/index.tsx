@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                   operating systems, programming languages, computer security, \
                   distributed systems, computer organization, computer science \
                   theory, enumerative combinatorics, linear algebra, calculus 1-3, \
-                  probability theory, statistics",
+                  probability theory, web systems,statistics",
       image: "/education/umich.jpg"
     }
   ];
