@@ -60,9 +60,9 @@ const Home: NextPage = () => {
       degree: "b.s.e. computer science",
       description: "coursework: data structures, algorithms, machine learning, \
                   operating systems, programming languages, computer security, \
-                  distributed systems, computer organization, computer science \
-                  theory, enumerative combinatorics, linear algebra, calculus 1-3, \
-                  probability theory, web systems,statistics",
+                  distributed systems, computer organization, web systems, \
+                  computer science theory, enumerative combinatorics, linear algebra, \
+                  calculus 1-3, probability theory, statistics",
       image: "/education/umich.jpg"
     }
   ];
