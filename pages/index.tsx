@@ -73,7 +73,7 @@ const Home: NextPage = () => {
       role: "software engineering",
       link: "https://meta.com",
       description: [
-        "incoming..."
+        "soon..."
       ],
       image: "/employment/meta.png"
     },
@@ -292,7 +292,7 @@ const Home: NextPage = () => {
         <div className={`transform transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10 max-w-3xl w-full`}>
           <div className="space-y-8">
             <h1 className="text-5xl sm:text-5xl text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 font-crimson before:absolute before:content-['Dev_Kunjadia'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
-              Hi, I'm Dev (dh-ay-v)!
+              hi, i'm Dev
             </h1>
 
             <div className="text-xl text-[#4A2511] space-y-4 text-left">
