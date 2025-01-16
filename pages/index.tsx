@@ -141,7 +141,7 @@ const Home: NextPage = () => {
     },
     {
       title: "scaled a 300+ person college entrepreneurship club bringing in companies / vcs like Google\
-      , Bubble, Uber, Ramp, MongoDB, Neo, Greylock, Drive Capital, LeapYear, Contrary Capital, etc.",
+      , Bubble, Uber, Ramp, MongoDB, Neo, Drive Capital, LeapYear, Contrary Capital, etc.",
       link: "https://v1michigan.com/"
     },
     {
