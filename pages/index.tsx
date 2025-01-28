@@ -68,15 +68,15 @@ const Home: NextPage = () => {
   ];
 
   const experience: ExperienceType[] = [
-    // {
-    //   company: "Meta",
-    //   role: "software engineering",
-    //   link: "https://meta.com",
-    //   description: [
-    //     "soon..."
-    //   ],
-    //   image: "/employment/meta.png"
-    // },
+    {
+      company: "Meta",
+      role: "software engineering",
+      link: "https://meta.com",
+      description: [
+        "soon..."
+      ],
+      image: "/employment/meta.png"
+    },
     {
       company: "Milieu",
       role: "software engineering, product management, design",
