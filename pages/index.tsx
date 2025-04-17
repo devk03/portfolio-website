@@ -494,7 +494,20 @@ const Home: NextPage = () => {
             <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">community building</span>
           </div>
         </section>
+        {/* People who cloned my website */}
+        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 bg-[#F5F5DC]">
+          <h2 className="text-3xl font-crimson mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['People_who_cloned_my_website'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+            people who cloned my website
+          </h2>
+          <div className="grid grid-cols-1 gap-4">
+            <a href="https://www.sheppnix.dev/" target="_blank" rel="noopener noreferrer" className="text-[#8B4513] hover:text-[#4A2511] transition-colors">
+              sheppnix.dev
+            </a>
+          </div>
+        </section>
       </div>
+
+
     </>
   );
 };
