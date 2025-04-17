@@ -73,7 +73,7 @@ const Home: NextPage = () => {
       role: "software engineering",
       link: "https://meta.com",
       description: [
-        "i think?"
+        "working on data infrastructure for the meta ai stack"
       ],
       image: "/employment/meta.png"
     },
