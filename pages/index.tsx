@@ -73,7 +73,7 @@ const Home: NextPage = () => {
       role: "software engineering",
       link: "https://meta.com",
       description: [
-        "working on data infrastructure for the meta ai stack"
+        "working on infrastructure for llm deployments, inference, and evaluations"
       ],
       image: "/employment/meta.png"
     },
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Dev Kunjadia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Dev Kunjadia - Software Engineer and Student at University of Michigan" />
+        <meta name="description" content="Dev Kunjadia - Software Engineer at Meta" />
 
         {/* Open Graph / Social Media Meta Tags */}
         <meta property="og:title" content="Dev Kunjadia" />
@@ -296,9 +296,9 @@ const Home: NextPage = () => {
             </h1>
 
             <div className="text-xl text-[#4A2511] space-y-4 text-left">
-              <p>i'm a software engineer studying CS + Math at the University of Michigan</p>
+              <p>i'm a software engineer at meta</p>
               <p>i'm interested in how engineering, design, and product level thinking can be combined to create intuitive solutions for complex problems</p>
-              <p>you can reach me at <Link href="mailto:devk@umich.edu" className="underline transition-colors duration-300 hover:text-[#8B4513]">devk[at]umich[dot]edu</Link> — i am also active on twitter and linkedin</p>
+              <p>you can reach me at <span className="underline transition-colors duration-300 hover:text-[#8B4513]">devk[at]umich[dot]edu</span> — i am also active on twitter and linkedin</p>
             </div>
           </div>
         </div>
