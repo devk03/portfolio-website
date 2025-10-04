@@ -80,7 +80,7 @@ const Home: NextPage = () => {
     {
       company: "Milieu",
       role: "software engineering, product management, design",
-      link: "https://milieubio.com",
+      link: "https://milieuskin.com",
       description: [
         "created core infra, payment/shipping integrations, designed web experience, serum selection algorithm"
       ],
@@ -136,6 +136,10 @@ const Home: NextPage = () => {
 
   const coolShit: CoolShitType[] = [
     {
+      title: "received offers from profound, microsoft, and capital one",
+      link: ""
+    },
+    {
       title: "hosted michigan's first ever ai tinkerers meetup",
       link: "https://ann-arbor.aitinkerers.org/p/ai-tinkerers-ann-arbor-september-18"
     },
@@ -153,18 +157,19 @@ const Home: NextPage = () => {
       link: "https://www.instagram.com/saddy.house/"
     },
     {
-      title: "got 120k+ likes and over 2m+ views on tiktok",
+      title: "got 135k+ likes and over 2m+ views on tiktok",
       link: "https://www.tiktok.com/@real_kunjadia"
     },
     {
       title: "was ranked top 16 in the state of michigan for folkstyle wrestling",
+      link: "https://youtu.be/_j8y6_KNVFY?si=DZ-ip0Kew4ApanFw"
     },
     {
       title: "started ship it, a regular coworking event designed for builders, at umich",
       link: "https://v1michigan.com/ship-it/"
     },
     {
-      title: "solo-travelled for 2 weeks in europe",
+      title: "backpacked through 6 countries in europe in a month",
     },
   ];
 
@@ -298,6 +303,7 @@ const Home: NextPage = () => {
             <div className="text-xl text-[#4A2511] space-y-4 text-left">
               <p>i'm a software engineer at meta</p>
               <p>i'm interested in how engineering, design, and product level thinking can be combined to create intuitive solutions for complex problems</p>
+              <p>i'm open to founding roles at startups and infrastructure roles at ai labs</p>
               <p>you can reach me at <span className="underline transition-colors duration-300 hover:text-[#8B4513]">devk[at]umich[dot]edu</span> — i am also active on twitter and linkedin</p>
             </div>
           </div>
@@ -427,7 +433,37 @@ const Home: NextPage = () => {
           <div className="flex flex-col space-y-4 font-crimson">
             {coolShit.map((item, index) => (
               <span key={index} className="text-[#4A2511] text-lg">
-                {item.link ? (
+                {item.title === "received offers from profound, microsoft, and capital one" ? (
+                  <>
+                    received offers from{" "}
+                    <Link
+                      href="https://www.tryprofound.com/"
+                      className="hover:underline hover:text-[#8B4513] transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      profound
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://www.microsoft.com/en-us/"
+                      className="hover:underline hover:text-[#8B4513] transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      microsoft
+                    </Link>
+                    , and{" "}
+                    <Link
+                      href="https://www.capitalone.com/"
+                      className="hover:underline hover:text-[#8B4513] transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      capital one
+                    </Link>
+                  </>
+                ) : item.link ? (
                   <Link
                     href={item.link}
                     className="inline-flex items-center gap-2 hover:underline hover:text-[#8B4513] transition-colors"
@@ -487,7 +523,7 @@ const Home: NextPage = () => {
             hobbies and fun
           </h2>
           <div className="font-crimson flex flex-wrap gap-4">
-            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">strength training</span>
+            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">dj-ing</span>
             <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">content creation</span>
             <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">solo travel</span>
             <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">exploring tech</span>
