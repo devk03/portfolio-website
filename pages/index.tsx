@@ -73,7 +73,8 @@ const Home: NextPage = () => {
       role: "software engineering",
       link: "https://meta.com",
       description: [
-        "working on infrastructure for llm deployments, inference, and evaluations"
+        "working on infrastructure for llm deployments, inference, and evaluations",
+        "turned down offers at profound • microsoft • capital one • milieu"
       ],
       image: "/employment/meta.png"
     },
@@ -413,7 +414,7 @@ const Home: NextPage = () => {
                     />
                   </Link>
                 )}
-                <div className="text-center md:text-left">
+                <div className="text-left">
                   <h3 className="text-xl font-semibold text-[#4A2511]">
                     <Link href={edu.link} className="hover:underline hover:text-[#8B4513]">{edu.school}</Link>
                   </h3>
@@ -501,14 +502,88 @@ const Home: NextPage = () => {
                 <div className="flex-grow">
                   <div className="flex md:items-center flex-col md:flex-row md:gap-2">
                     <h3 className="text-xl font-semibold text-[#4A2511]">
-                      <Link href={exp.link} className="hover:underline hover:text-[#8B4513] transition-colors">{exp.company}</Link>
+                      {exp.link ? (
+                        <Link href={exp.link} className="hover:underline hover:text-[#8B4513] transition-colors">{exp.company}</Link>
+                      ) : (
+                        exp.company
+                      )}
                     </h3>
-                    <span className="text-[#4A2511] hidden md:inline">•</span>
-                    <span className="text-[#4A2511]">{exp.role}</span>
+                    {exp.role && (
+                      <>
+                        <span className="text-[#4A2511] hidden md:inline">•</span>
+                        <span className="text-[#4A2511]">{exp.role}</span>
+                      </>
+                    )}
                   </div>
                   <ul className="mt-2 space-y-1">
                     {exp.description.map((desc, i) => (
-                      <li key={i} className="text-[#4A2511]">{desc}</li>
+                      <li key={i} className="text-[#4A2511]">
+                        {desc.includes("turned down offers at") ? (
+                          <div className="flex items-center gap-2">
+                            <span>turned down offers at</span>
+                            <div className="flex gap-1">
+                              <Link
+                                href="https://www.tryprofound.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity"
+                              >
+                                <Image
+                                  src="/employment/profound.png"
+                                  alt="Profound"
+                                  width={16}
+                                  height={16}
+                                  className="object-contain"
+                                />
+                              </Link>
+                              <Link
+                                href="https://www.microsoft.com/en-us/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity"
+                              >
+                                <Image
+                                  src="/employment/microsoft.png"
+                                  alt="Microsoft"
+                                  width={16}
+                                  height={16}
+                                  className="object-contain"
+                                />
+                              </Link>
+                              <Link
+                                href="https://www.capitalone.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity"
+                              >
+                                <Image
+                                  src="/employment/capitalone.png"
+                                  alt="Capital One"
+                                  width={16}
+                                  height={16}
+                                  className="object-contain"
+                                />
+                              </Link>
+                              <Link
+                                href="https://milieuskin.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity"
+                              >
+                                <Image
+                                  src="/employment/milieu.png"
+                                  alt="Milieu"
+                                  width={16}
+                                  height={16}
+                                  className="object-contain"
+                                />
+                              </Link>
+                            </div>
+                          </div>
+                        ) : (
+                          desc
+                        )}
+                      </li>
                     ))}
                   </ul>
                 </div>
