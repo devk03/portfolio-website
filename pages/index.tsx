@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from "next/head";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { loadSlim } from "tsparticles-slim";
 import type { Container, Engine } from "tsparticles-engine";
@@ -37,8 +37,41 @@ interface CoolShitType {
   link?: string;
 }
 
+// Custom hook for intersection observer
+const useIntersectionObserver = (threshold = 0.1) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, isVisible] as const;
+};
+
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
+
+  // Intersection observer hooks for each section
+  const [educationRef, educationVisible] = useIntersectionObserver();
+  const [coolShitRef, coolShitVisible] = useIntersectionObserver();
+  const [experienceRef, experienceVisible] = useIntersectionObserver();
+  const [hobbiesRef, hobbiesVisible] = useIntersectionObserver();
+  const [clonedRef, clonedVisible] = useIntersectionObserver();
 
   useEffect(() => {
     setMounted(true);
@@ -397,13 +430,13 @@ const Home: NextPage = () => {
       {/* Main Content */}
       <div className="bg-[#F5F5DC] text-[#8B4513]">
         {/* Education Section */}
-        <section className="max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20">
+        <section ref={educationRef} className={`max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20 transition-all duration-1000 ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Education'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             education
           </h2>
           <div className="space-y-8">
             {education.map((edu, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson">
+              <div key={index} className={`flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson transition-all duration-1000 delay-${index * 200} ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 {edu.image && (
                   <Link href={edu.link} className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(74,37,17,0.25)] hover:opacity-80 transition-opacity">
                     <Image
@@ -427,13 +460,13 @@ const Home: NextPage = () => {
         </section>
 
         {/* Cool Shit Section */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20">
+        <section ref={coolShitRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 transition-all duration-1000 ${coolShitVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Cool_Shit'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             some stuff i've done
           </h2>
           <div className="flex flex-col space-y-4 font-crimson">
             {coolShit.map((item, index) => (
-              <span key={index} className="text-[#4A2511] text-lg">
+              <span key={index} className={`text-[#4A2511] text-lg transition-all duration-1000 delay-${index * 100} ${coolShitVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
                 {item.title === "received offers from profound, microsoft, and capital one" ? (
                   <>
                     received offers from{" "}
@@ -482,13 +515,13 @@ const Home: NextPage = () => {
         </section>
 
         {/* Experience Section */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20">
+        <section ref={experienceRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 transition-all duration-1000 ${experienceVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Experience'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             my experiences
           </h2>
           <div className="space-y-0">
             {experience.map((exp, index) => (
-              <div key={index} className="flex items-start gap-6 p-6 font-crimson">
+              <div key={index} className={`flex items-start gap-6 p-6 font-crimson transition-all duration-1000 delay-${index * 150} ${experienceVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
                 {exp.image && (
                   <Link href={exp.link} className="w-14 h-14 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(74,37,17,0.25)] hover:opacity-80 transition-opacity">
                     <Image
@@ -593,25 +626,25 @@ const Home: NextPage = () => {
         </section>
 
         {/* Hobbies & Fun Section */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20">
+        <section ref={hobbiesRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 transition-all duration-1000 ${hobbiesVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Hobbies_&_Fun'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             hobbies and fun
           </h2>
           <div className="font-crimson flex flex-wrap gap-4">
-            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">dj-ing</span>
-            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">content creation</span>
-            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">solo travel</span>
-            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">exploring tech</span>
-            <span className="px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511]">community building</span>
+            {['dj-ing', 'content creation', 'solo travel', 'exploring tech', 'community building'].map((hobby, index) => (
+              <span key={index} className={`px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511] transition-all duration-1000 delay-${index * 100} ${hobbiesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+                {hobby}
+              </span>
+            ))}
           </div>
         </section>
         {/* People who cloned my website */}
-        <section className="max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 bg-[#F5F5DC]">
+        <section ref={clonedRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 bg-[#F5F5DC] transition-all duration-1000 ${clonedVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['People_who_cloned_my_website'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
             people who cloned my website
           </h2>
           <div className="grid grid-cols-1 gap-4">
-            <a href="https://www.sheppnix.dev/" target="_blank" rel="noopener noreferrer" className="text-[#8B4513] hover:text-[#4A2511] transition-colors">
+            <a href="https://www.sheppnix.dev/" target="_blank" rel="noopener noreferrer" className={`text-[#8B4513] hover:text-[#4A2511] transition-all duration-1000 delay-200 ${clonedVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
               sheppnix.dev
             </a>
           </div>
