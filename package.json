@@ -13,6 +13,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-tsparticles": "^2.12.2",
+    "shaders": "^2.3.69",
     "tailwindcss": "latest",
     "tsparticles": "^3.7.1",
     "tsparticles-slim": "^2.12.0",

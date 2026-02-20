@@ -1,11 +1,9 @@
 import type { NextPage } from 'next';
 import Head from "next/head";
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import { loadSlim } from "tsparticles-slim";
-import type { Container, Engine } from "tsparticles-engine";
-import Particles from "react-tsparticles";
 import Link from 'next/link';
+import { Shader, CursorRipples, FilmGrain, Swirl, WaveDistortion } from 'shaders/react';
 
 interface ProjectType {
   title: string;
@@ -18,7 +16,6 @@ interface ProjectType {
 
 interface ExperienceType {
   company: string;
-  role: string;
   link: string;
   description: string[];
   image?: string;
@@ -77,15 +74,6 @@ const Home: NextPage = () => {
     setMounted(true);
   }, []);
 
-  const particlesInit = useCallback(async (engine: Engine) => {
-    console.log("Initializing particles");
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    console.log("Particles loaded");
-  }, []);
-
   const education: EducationType[] = [
     {
       school: "University of Michigan, Ann Arbor",
@@ -102,18 +90,15 @@ const Home: NextPage = () => {
 
   const experience: ExperienceType[] = [
     {
-      company: "Meta",
-      role: "software engineering",
+      company: "Meta Superintelligence Labs",
       link: "https://meta.com",
       description: [
-        "working on infrastructure for llm deployments, inference, and evaluations",
-        "turned down offers at profound • microsoft • capital one • milieu"
+        "working on infrastructure for llm deployments, inference, and evaluations"
       ],
       image: "/employment/meta.png"
     },
     {
       company: "Milieu",
-      role: "software engineering, product management, design",
       link: "https://milieuskin.com",
       description: [
         "created core infra, payment/shipping integrations, designed web experience, serum selection algorithm"
@@ -122,7 +107,6 @@ const Home: NextPage = () => {
     },
     {
       company: "Capital One",
-      role: "software engineering",
       link: "https://capitalone.com",
       description: [
         "worked on a distributed linter to enforce code quality amongst card tech"
@@ -131,7 +115,6 @@ const Home: NextPage = () => {
     },
     {
       company: "Skyspecs",
-      role: "software engineering",
       link: "https://skyspecs.com",
       description: [
         "optimized a massive renewable asset management platform and wrote a lot of react"
@@ -140,7 +123,6 @@ const Home: NextPage = () => {
     },
     {
       company: "Magna",
-      role: "software engineering",
       link: "https://www.magna.com",
       description: [
         "wrote lots of c++ to optimize component communication in vehicle dashboards"
@@ -149,7 +131,6 @@ const Home: NextPage = () => {
     },
     {
       company: "Volcone",
-      role: "product management, software engineering",
       link: "https://volcone.com",
       description: [
         "built transportation software to tackle the michigan mobility challenge"
@@ -170,12 +151,11 @@ const Home: NextPage = () => {
 
   const coolShit: CoolShitType[] = [
     {
-      title: "received offers from profound, microsoft, and capital one",
-      link: ""
+      title: "wrote MSL's go to production deployment pipeline for multi-modal models unlcoking distributed inference at scale",
     },
     {
-      title: "hosted michigan's first ever ai tinkerers meetup",
-      link: "https://ann-arbor.aitinkerers.org/p/ai-tinkerers-ann-arbor-september-18"
+      title: "scaled a consumer app to over 6,000 users, generating a 5 figure arr, and breaking into top 200 on the app store",
+      link: "https://apps.apple.com/us/app/radiant-speaking-challenges/id6751936053"
     },
     {
       title: "scaled a 300+ person college entrepreneurship club bringing in companies / vcs like Google\
@@ -232,125 +212,58 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
       </Head>
 
+      {/* Fixed shader background */}
+      <div className="fixed inset-0 z-0">
+        <Shader style={{ width: '100%', height: '100%' }}>
+          <Swirl
+            blend={47}
+            colorA="#1c1c1c"
+            colorB="#050505"
+            colorSpace="oklch"
+            detail={1.7}
+            speed={0.2} />
+          <WaveDistortion
+            angle={203}
+            edges="stretch"
+            frequency={2.8}
+            waveType="sine"
+            speed={2}
+            strength={0.5}
+            visible={true} />
+          <FilmGrain
+            strength={0.1} />
+          <CursorRipples
+            chromaticSplit={0}
+            decay={2}
+            intensity={0.5}
+            radius={10} />
+        </Shader>
+      </div>
+
       {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-center items-center px-6 font-crimson relative bg-gradient-to-b from-[#F5F5DC] via-[#F5F5DC] to-transparent">
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={{
-            fullScreen: false,
-            background: {
-              color: {
-                value: "#F5F5DC",
-              },
-            },
-            fpsLimit: 120,
-            particles: {
-              color: {
-                value: ["#8B4513", "#D2691E", "#A0522D"],
-              },
-              links: {
-                color: "#8B4513",
-                distance: 150,
-                enable: true,
-                opacity: 0.3,
-                width: 1,
-              },
-              move: {
-                enable: true,
-                direction: "none",
-                outModes: {
-                  default: "bounce",
-                },
-                random: false,
-                speed: 1,
-                straight: false,
-                trail: {
-                  enable: true,
-                  length: 3,
-                  fillColor: "#F5F5DC",
-                },
-              },
-              number: {
-                density: {
-                  enable: true,
-                  area: 100,
-                },
-                value: 10,
-              },
-              opacity: {
-                value: 1,
-                animation: {
-                  enable: true,
-                  speed: 0.3,
-                  minimumValue: 0.3,
-                  sync: true
-                }
-              },
-              blur: {
-                enable: true,
-                strength: 2
-              },
-              shape: {
-                type: "circle",
-              },
-              size: {
-                value: { min: 2, max: 4 },
-                animation: {
-                  enable: true,
-                  speed: 1,
-                  minimumValue: 1,
-                  sync: false
-                }
-              },
-            },
-            detectRetina: true,
-            interactivity: {
-              events: {
-                onHover: {
-                  enable: true,
-                  mode: "grab"
-                },
-              },
-              modes: {
-                grab: {
-                  distance: 200,
-                  links: {
-                    opacity: 0.5
-                  }
-                }
-              }
-            },
-          }}
-          className="absolute inset-0 w-full h-full"
-        />
-
-        <div className="absolute inset-0 backdrop-blur-[4px] bg-gradient-to-b from-[#F5F5DC]/35 via-[#F5F5DC]/20 to-[#F5F5DC]" />
-
+      <section className="h-screen flex flex-col justify-center items-center px-6 font-crimson relative">
         <div className={`transform transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10 max-w-3xl w-full`}>
           <div className="space-y-8">
-            <h1 className="text-5xl sm:text-5xl text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 font-crimson before:absolute before:content-['Dev_Kunjadia'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+            <h1 className="text-5xl lg:text-6xl text-left text-white tracking-tight relative leading-normal py-2 font-crimson">
               hi, i'm Dev
             </h1>
 
-            <div className="text-xl text-[#4A2511] space-y-4 text-left">
-              <p>i'm a software engineer at meta</p>
-              <p>i'm interested in how engineering, design, and product level thinking can be combined to create intuitive solutions for complex problems</p>
-              <p>i'm open to founding roles at startups and infrastructure roles at ai labs</p>
-              <p>you can reach me at <span className="underline transition-colors duration-300 hover:text-[#8B4513]">devk[at]umich[dot]edu</span> — i am also active on twitter and linkedin</p>
+            <div className="text-xl lg:text-2xl text-white space-y-4 text-left">
+              <p>i'm a software engineer at meta working on research inference</p>
+              <p>i'm interested in how engineering and product level thinking can be combined to create intuitive solutions for complex problems</p>
+              <p>you can reach me by my x handle <Link href="https://x.com/dev_kunjadia">@dev_kunjadia</Link></p>
             </div>
           </div>
         </div>
 
-        <div className="fixed bottom-4 right-4 text-sm text-[#4A2511] font-crimson z-50 flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-sm">
+        <div className="fixed bottom-4 right-4 text-sm text-white font-crimson z-50 flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-sm">
           Status:
-          <div className="w-2 h-2 rounded-full bg-[#4A2511] animate-pulse"></div>
+          <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
         </div>
 
         <div className="fixed md:left-4 md:top-1/2 md:-translate-y-1/2 top-4 left-0 right-0 md:right-auto flex flex-row md:flex-col items-center justify-center md:justify-center gap-4 z-50">
           <Link href="https://github.com/devk03"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -360,7 +273,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://kunjadia.substack.com/"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[24px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -370,7 +283,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://www.linkedin.com/in/dev-kunjadia/"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -380,7 +293,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://twitter.com/dev_kunjadia"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -390,7 +303,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://www.tiktok.com/@real_kunjadia"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -400,7 +313,7 @@ const Home: NextPage = () => {
             </svg>
           </Link>
           <Link href="https://www.youtube.com/@devkunjadia3792"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-[#4A2511] hover:text-[#8B4513] backdrop-blur-sm p-2 rounded-full">
+            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
             <svg
               className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
               viewBox="0 0 24 24"
@@ -412,10 +325,10 @@ const Home: NextPage = () => {
         </div>
 
         <div className="absolute bottom-8 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-sm text-[#4A2511]">see more</span>
+          <span className="text-sm text-white">see more</span>
           <div className="flex flex-col -space-y-1">
             <svg
-              className="w-4 h-4 text-[#4A2511]"
+              className="w-4 h-4 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -425,34 +338,33 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      {/* See More */}
 
       {/* Main Content */}
-      <div className="bg-[#F5F5DC] text-[#8B4513]">
+      <div className="relative z-10 text-white">
         {/* Education Section */}
         <section ref={educationRef} className={`max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20 transition-all duration-1000 ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Education'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+          <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
             education
           </h2>
           <div className="space-y-8">
             {education.map((edu, index) => (
               <div key={index} className={`flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson transition-all duration-1000 delay-${index * 200} ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 {edu.image && (
-                  <Link href={edu.link} className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(74,37,17,0.25)] hover:opacity-80 transition-opacity">
+                  <Link href={edu.link} className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(255,255,255,0.1)] hover:opacity-80 transition-opacity">
                     <Image
                       src={edu.image}
                       alt={edu.school}
                       fill
-                      className="object-contain"
+                      className="object-contain grayscale contrast-200 brightness-125"
                     />
                   </Link>
                 )}
                 <div className="text-left">
-                  <h3 className="text-xl font-semibold text-[#4A2511]">
-                    <Link href={edu.link} className="hover:underline hover:text-[#8B4513]">{edu.school}</Link>
+                  <h3 className="text-xl font-semibold text-white">
+                    <Link href={edu.link} className="hover:underline hover:text-white">{edu.school}</Link>
                   </h3>
-                  <p className="text-[#8B4513]">{edu.degree}</p>
-                  <p className="text-[#4A2511] mt-2">{edu.description}</p>
+                  <p className="text-white">{edu.degree}</p>
+                  <p className="text-white mt-2">{edu.description}</p>
                 </div>
               </div>
             ))}
@@ -460,47 +372,17 @@ const Home: NextPage = () => {
         </section>
 
         {/* Cool Shit Section */}
-        <section ref={coolShitRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 transition-all duration-1000 ${coolShitVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Cool_Shit'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+        <section ref={coolShitRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${coolShitVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
             some stuff i've done
           </h2>
           <div className="flex flex-col space-y-4 font-crimson">
             {coolShit.map((item, index) => (
-              <span key={index} className={`text-[#4A2511] text-lg transition-all duration-1000 delay-${index * 100} ${coolShitVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-                {item.title === "received offers from profound, microsoft, and capital one" ? (
-                  <>
-                    received offers from{" "}
-                    <Link
-                      href="https://www.tryprofound.com/"
-                      className="hover:underline hover:text-[#8B4513] transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      profound
-                    </Link>
-                    ,{" "}
-                    <Link
-                      href="https://www.microsoft.com/en-us/"
-                      className="hover:underline hover:text-[#8B4513] transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      microsoft
-                    </Link>
-                    , and{" "}
-                    <Link
-                      href="https://www.capitalone.com/"
-                      className="hover:underline hover:text-[#8B4513] transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      capital one
-                    </Link>
-                  </>
-                ) : item.link ? (
+              <span key={index} className={`text-white text-lg transition-all duration-1000 delay-${index * 100} ${coolShitVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+                {item.link ? (
                   <Link
                     href={item.link}
-                    className="inline-flex items-center gap-2 hover:underline hover:text-[#8B4513] transition-colors"
+                    className="inline-flex items-center gap-2 hover:underline hover:text-white transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -515,107 +397,37 @@ const Home: NextPage = () => {
         </section>
 
         {/* Experience Section */}
-        <section ref={experienceRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 transition-all duration-1000 ${experienceVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-12 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Experience'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+        <section ref={experienceRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${experienceVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
             my experiences
           </h2>
           <div className="space-y-0">
             {experience.map((exp, index) => (
               <div key={index} className={`flex items-start gap-6 p-6 font-crimson transition-all duration-1000 delay-${index * 150} ${experienceVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
                 {exp.image && (
-                  <Link href={exp.link} className="w-14 h-14 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(74,37,17,0.25)] hover:opacity-80 transition-opacity">
+                  <Link href={exp.link} className="w-14 h-14 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(255,255,255,0.1)] hover:opacity-80 transition-opacity">
                     <Image
                       src={exp.image}
                       alt={exp.company}
                       fill
-                      className="object-contain"
+                      className="object-contain grayscale contrast-200 brightness-125"
                     />
                   </Link>
                 )}
                 <div className="flex-grow">
                   <div className="flex md:items-center flex-col md:flex-row md:gap-2">
-                    <h3 className="text-xl font-semibold text-[#4A2511]">
+                    <h3 className="text-xl font-semibold text-white">
                       {exp.link ? (
-                        <Link href={exp.link} className="hover:underline hover:text-[#8B4513] transition-colors">{exp.company}</Link>
+                        <Link href={exp.link} className="hover:underline hover:text-white transition-colors">{exp.company}</Link>
                       ) : (
                         exp.company
                       )}
                     </h3>
-                    {exp.role && (
-                      <>
-                        <span className="text-[#4A2511] hidden md:inline">•</span>
-                        <span className="text-[#4A2511]">{exp.role}</span>
-                      </>
-                    )}
                   </div>
                   <ul className="mt-2 space-y-1">
                     {exp.description.map((desc, i) => (
-                      <li key={i} className="text-[#4A2511]">
-                        {desc.includes("turned down offers at") ? (
-                          <div className="flex items-center gap-2">
-                            <span>turned down offers at</span>
-                            <div className="flex gap-1">
-                              <Link
-                                href="https://www.tryprofound.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:opacity-80 transition-opacity"
-                              >
-                                <Image
-                                  src="/employment/profound.png"
-                                  alt="Profound"
-                                  width={16}
-                                  height={16}
-                                  className="object-contain"
-                                />
-                              </Link>
-                              <Link
-                                href="https://www.microsoft.com/en-us/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:opacity-80 transition-opacity"
-                              >
-                                <Image
-                                  src="/employment/microsoft.png"
-                                  alt="Microsoft"
-                                  width={16}
-                                  height={16}
-                                  className="object-contain"
-                                />
-                              </Link>
-                              <Link
-                                href="https://www.capitalone.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:opacity-80 transition-opacity"
-                              >
-                                <Image
-                                  src="/employment/capitalone.png"
-                                  alt="Capital One"
-                                  width={16}
-                                  height={16}
-                                  className="object-contain"
-                                />
-                              </Link>
-                              <Link
-                                href="https://milieuskin.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:opacity-80 transition-opacity"
-                              >
-                                <Image
-                                  src="/employment/milieu.png"
-                                  alt="Milieu"
-                                  width={16}
-                                  height={16}
-                                  className="object-contain"
-                                />
-                              </Link>
-                            </div>
-                          </div>
-                        ) : (
-                          desc
-                        )}
+                      <li key={i} className="text-white">
+                        {desc}
                       </li>
                     ))}
                   </ul>
@@ -626,32 +438,31 @@ const Home: NextPage = () => {
         </section>
 
         {/* Hobbies & Fun Section */}
-        <section ref={hobbiesRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 transition-all duration-1000 ${hobbiesVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['Hobbies_&_Fun'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+        <section ref={hobbiesRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${hobbiesVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className="text-3xl font-crimson mb-8 text-left text-white tracking-tight relative leading-normal py-2">
             hobbies and fun
           </h2>
           <div className="font-crimson flex flex-wrap gap-4">
             {['dj-ing', 'content creation', 'solo travel', 'exploring tech', 'community building'].map((hobby, index) => (
-              <span key={index} className={`px-4 py-2 rounded-full bg-[#D2B48C]/50 text-[#4A2511] transition-all duration-1000 delay-${index * 100} ${hobbiesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+              <span key={index} className={`px-4 py-2 rounded-full bg-white/10 text-white transition-all duration-1000 delay-${index * 100} ${hobbiesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
                 {hobby}
               </span>
             ))}
           </div>
         </section>
+
         {/* People who cloned my website */}
-        <section ref={clonedRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-[#D2B48C] relative z-20 bg-[#F5F5DC] transition-all duration-1000 ${clonedVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-8 text-left bg-clip-text text-transparent bg-gradient-to-r from-[#4A2511] to-[#8B4513] tracking-tight relative leading-normal py-2 before:absolute before:content-['People_who_cloned_my_website'] before:inset-0 before:text-[#F5F5DC] before:blur-[30px] before:-z-10 before:opacity-50">
+        <section ref={clonedRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${clonedVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className="text-3xl font-crimson mb-8 text-left text-white tracking-tight relative leading-normal py-2">
             people who cloned my website
           </h2>
           <div className="grid grid-cols-1 gap-4">
-            <a href="https://www.sheppnix.dev/" target="_blank" rel="noopener noreferrer" className={`text-[#8B4513] hover:text-[#4A2511] transition-all duration-1000 delay-200 ${clonedVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+            <a href="https://www.sheppnix.dev/" target="_blank" rel="noopener noreferrer" className={`text-white hover:text-white transition-all duration-1000 delay-200 ${clonedVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
               sheppnix.dev
             </a>
           </div>
         </section>
       </div>
-
-
     </>
   );
 };
