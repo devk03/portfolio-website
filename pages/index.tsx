@@ -151,7 +151,7 @@ const Home: NextPage = () => {
 
   const coolShit: CoolShitType[] = [
     {
-      title: "wrote MSL's go to production deployment pipeline for multi-modal models unlcoking distributed inference at scale",
+      title: "wrote MSL's go to production deployment pipeline for multi-modal models unlocking distributed inference at scale",
     },
     {
       title: "scaled a consumer app to over 6,000 users, generating a 5 figure arr, and breaking into top 200 on the app store",
