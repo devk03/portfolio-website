@@ -89,9 +89,9 @@ const Home: NextPage = () => {
   const experience: ExperienceType[] = [
     {
       company: "Console",
-      link: "https://console.dev",
+      link: "https://console.com",
       description: [
-        "the ai platform for IT — learning how to become a founder here"
+        "the ai platform for IT - backed by Thrive — learning how to become a founder here"
       ],
       image: "/employment/console.png"
     },
