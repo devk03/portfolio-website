@@ -67,8 +67,6 @@ const Home: NextPage = () => {
   const [educationRef, educationVisible] = useIntersectionObserver();
   const [coolShitRef, coolShitVisible] = useIntersectionObserver();
   const [experienceRef, experienceVisible] = useIntersectionObserver();
-  const [hobbiesRef, hobbiesVisible] = useIntersectionObserver();
-  const [clonedRef, clonedVisible] = useIntersectionObserver();
 
   useEffect(() => {
     setMounted(true);
@@ -89,6 +87,14 @@ const Home: NextPage = () => {
   ];
 
   const experience: ExperienceType[] = [
+    {
+      company: "Console",
+      link: "https://console.dev",
+      description: [
+        "the ai platform for IT — learning how to become a founder here"
+      ],
+      image: "/employment/console.png"
+    },
     {
       company: "Meta Superintelligence Labs",
       link: "https://meta.com",
@@ -249,8 +255,7 @@ const Home: NextPage = () => {
             </h1>
 
             <div className="text-xl lg:text-2xl text-white space-y-4 text-left">
-              <p>i'm a software engineer at meta working on research inference</p>
-              <p>i'm interested in how engineering and product level thinking can be combined to create intuitive solutions for complex problems</p>
+              <p>i have worked on inference and consumer apps</p>
               <p>you can reach me by my x handle <Link href="https://x.com/dev_kunjadia">@dev_kunjadia</Link></p>
             </div>
           </div>
@@ -341,38 +346,8 @@ const Home: NextPage = () => {
 
       {/* Main Content */}
       <div className="relative z-10 text-white">
-        {/* Education Section */}
-        <section ref={educationRef} className={`max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20 transition-all duration-1000 ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
-            education
-          </h2>
-          <div className="space-y-8">
-            {education.map((edu, index) => (
-              <div key={index} className={`flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson transition-all duration-1000 delay-${index * 200} ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                {edu.image && (
-                  <Link href={edu.link} className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(255,255,255,0.1)] hover:opacity-80 transition-opacity">
-                    <Image
-                      src={edu.image}
-                      alt={edu.school}
-                      fill
-                      className="object-contain grayscale contrast-200 brightness-125"
-                    />
-                  </Link>
-                )}
-                <div className="text-left">
-                  <h3 className="text-xl font-semibold text-white">
-                    <Link href={edu.link} className="hover:underline hover:text-white">{edu.school}</Link>
-                  </h3>
-                  <p className="text-white">{edu.degree}</p>
-                  <p className="text-white mt-2">{edu.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Cool Shit Section */}
-        <section ref={coolShitRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${coolShitVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <section ref={coolShitRef} className={`max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20 transition-all duration-1000 ${coolShitVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
             some stuff i've done
           </h2>
@@ -437,31 +412,36 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        {/* Hobbies & Fun Section */}
-        <section ref={hobbiesRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${hobbiesVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-8 text-left text-white tracking-tight relative leading-normal py-2">
-            hobbies and fun
+        {/* Education Section */}
+        <section ref={educationRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
+            education
           </h2>
-          <div className="font-crimson flex flex-wrap gap-4">
-            {['dj-ing', 'content creation', 'solo travel', 'exploring tech', 'community building'].map((hobby, index) => (
-              <span key={index} className={`px-4 py-2 rounded-full bg-white/10 text-white transition-all duration-1000 delay-${index * 100} ${hobbiesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
-                {hobby}
-              </span>
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div key={index} className={`flex flex-col md:flex-row items-center md:items-start gap-6 p-6 font-crimson transition-all duration-1000 delay-${index * 200} ${educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                {edu.image && (
+                  <Link href={edu.link} className="w-20 md:w-32 h-20 md:h-32 relative flex-shrink-0 drop-shadow-[0_4px_4px_rgba(255,255,255,0.1)] hover:opacity-80 transition-opacity">
+                    <Image
+                      src={edu.image}
+                      alt={edu.school}
+                      fill
+                      className="object-contain grayscale contrast-200 brightness-125"
+                    />
+                  </Link>
+                )}
+                <div className="text-left">
+                  <h3 className="text-xl font-semibold text-white">
+                    <Link href={edu.link} className="hover:underline hover:text-white">{edu.school}</Link>
+                  </h3>
+                  <p className="text-white">{edu.degree}</p>
+                  <p className="text-white mt-2">{edu.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* People who cloned my website */}
-        <section ref={clonedRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${clonedVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-8 text-left text-white tracking-tight relative leading-normal py-2">
-            people who cloned my website
-          </h2>
-          <div className="grid grid-cols-1 gap-4">
-            <a href="https://www.sheppnix.dev/" target="_blank" rel="noopener noreferrer" className={`text-white hover:text-white transition-all duration-1000 delay-200 ${clonedVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-              sheppnix.dev
-            </a>
-          </div>
-        </section>
       </div>
     </>
   );
