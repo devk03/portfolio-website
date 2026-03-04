@@ -99,7 +99,7 @@ const Home: NextPage = () => {
       company: "Meta Superintelligence Labs",
       link: "https://meta.com",
       description: [
-        "working on infrastructure for llm deployments, inference, and evaluations"
+        "worked on MSL's inference control plane, model deployment pipeline, and research inference tooling"
       ],
       image: "/employment/meta.png"
     },
