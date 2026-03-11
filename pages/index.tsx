@@ -250,7 +250,7 @@ const Home: NextPage = () => {
         <div className={`transform transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} relative z-10 max-w-3xl w-full`}>
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl text-left text-white tracking-tight relative leading-normal py-2 font-crimson">
-              hi, i'm Dev
+              hi, i'm Dev &#40;dh-ey-v&#41;
             </h1>
 
             <div className="text-xl lg:text-2xl text-white space-y-4 text-left">
