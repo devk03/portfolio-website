@@ -254,7 +254,7 @@ const Home: NextPage = () => {
             </h1>
 
             <div className="text-xl lg:text-2xl text-white space-y-4 text-left">
-              <p>i have worked on inference and consumer apps</p>
+              <p>i have worked on production inference, research tooling, and consumer apps</p>
               <p>you can reach me by my x handle <Link href="https://x.com/dev_kunjadia">@dev_kunjadia</Link></p>
             </div>
           </div>
