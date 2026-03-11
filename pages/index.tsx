@@ -164,7 +164,7 @@ const Home: NextPage = () => {
       link: "https://apps.apple.com/us/app/radiant-speaking-challenges/id6751936053"
     },
     {
-      title: "scaled a 300+ person college entrepreneurship club bringing in companies / VCs like Google, Bubble, Uber, Ramp, MongoDB, Neo, Drive Capital, LeapYear, Contrary Capital, etc.",
+      title: "scaled a 100+ person college entrepreneurship club bringing in companies / VCs like Google, Bubble, Uber, Ramp, MongoDB, Neo, Drive Capital, LeapYear, Contrary Capital, etc.",
       link: "https://v1michigan.com/"
     },
     {
