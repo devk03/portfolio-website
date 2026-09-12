@@ -29,11 +29,6 @@ interface EducationType {
   image?: string;
 }
 
-interface CoolShitType {
-  title: string;
-  link?: string;
-}
-
 // Custom hook for intersection observer
 const useIntersectionObserver = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,7 +60,6 @@ const Home: NextPage = () => {
 
   // Intersection observer hooks for each section
   const [educationRef, educationVisible] = useIntersectionObserver();
-  const [coolShitRef, coolShitVisible] = useIntersectionObserver();
   const [experienceRef, experienceVisible] = useIntersectionObserver();
 
   useEffect(() => {
@@ -91,7 +85,7 @@ const Home: NextPage = () => {
       company: "Console",
       link: "https://console.com",
       description: [
-        "the ai platform for IT - backed by Thrive — learning how to become a founder here"
+        "the ai platform for IT - backed by Thrive — acquired by Palo Alto Networks"
       ],
       image: "/employment/console.png"
     },
@@ -153,43 +147,6 @@ const Home: NextPage = () => {
     //   githubLink: "https://github.com/yourusername/portfolio",
     //   technologies: ["next.js", "typescript", "sass", "flask", "python"]
     // }
-  ];
-
-  const coolShit: CoolShitType[] = [
-    {
-      title: "wrote MSL's go-to production deployment pipeline for multi-modal models unlocking distributed inference at scale",
-    },
-    {
-      title: "scaled a consumer app to over 6,000 users, generating a 5-figure ARR, and breaking into top 150 on the app store",
-      link: "https://apps.apple.com/us/app/radiant-speaking-challenges/id6751936053"
-    },
-    {
-      title: "scaled a 100+ person college entrepreneurship club bringing in companies / VCs like Google, Bubble, Uber, Ramp, MongoDB, Neo, Drive Capital, LeapYear, Contrary Capital, etc.",
-      link: "https://v1michigan.com/"
-    },
-    {
-      title: "ran an accountability group of 10+ people for an entire summer",
-      link: "https://substack.com/home/post/p-147105734"
-    },
-    {
-      title: "threw an 800+ person halloween party",
-      link: "https://www.instagram.com/saddy.house/"
-    },
-    {
-      title: "got 135k+ likes and over 2m+ views on tiktok",
-      link: "https://www.tiktok.com/@real_kunjadia"
-    },
-    {
-      title: "was ranked top 16 in the state of michigan for folkstyle wrestling",
-      link: "https://youtu.be/_j8y6_KNVFY?si=DZ-ip0Kew4ApanFw"
-    },
-    {
-      title: "started ship it, a regular coworking event designed for builders, at umich",
-      link: "https://v1michigan.com/ship-it/"
-    },
-    {
-      title: "backpacked through 6 countries in europe in a month",
-    },
   ];
 
   return (
@@ -345,31 +302,6 @@ const Home: NextPage = () => {
 
       {/* Main Content */}
       <div className="relative z-10 text-white">
-        {/* Cool Shit Section */}
-        <section ref={coolShitRef} className={`max-w-4xl mx-auto pt-0 pb-20 px-6 relative z-20 transition-all duration-1000 ${coolShitVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
-            some stuff i've done
-          </h2>
-          <div className="flex flex-col space-y-4 font-crimson">
-            {coolShit.map((item, index) => (
-              <span key={index} className={`text-white text-lg transition-all duration-1000 delay-${index * 100} ${coolShitVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-                {item.link ? (
-                  <Link
-                    href={item.link}
-                    className="inline-flex items-center gap-2 hover:underline hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  item.title
-                )}
-              </span>
-            ))}
-          </div>
-        </section>
-
         {/* Experience Section */}
         <section ref={experienceRef} className={`max-w-4xl mx-auto py-20 px-6 border-t border-white/20 relative z-20 transition-all duration-1000 ${experienceVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-3xl font-crimson mb-12 text-left text-white tracking-tight relative leading-normal py-2">
@@ -384,7 +316,7 @@ const Home: NextPage = () => {
                       src={exp.image}
                       alt={exp.company}
                       fill
-                      className="object-contain grayscale contrast-200 brightness-125"
+                      className="object-contain"
                     />
                   </Link>
                 )}
@@ -425,7 +357,7 @@ const Home: NextPage = () => {
                       src={edu.image}
                       alt={edu.school}
                       fill
-                      className="object-contain grayscale contrast-200 brightness-125"
+                      className="object-contain"
                     />
                   </Link>
                 )}
