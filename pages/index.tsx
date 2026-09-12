@@ -82,10 +82,10 @@ const Home: NextPage = () => {
 
   const experience: ExperienceType[] = [
     {
-      company: "Console",
+      company: "Console (acquired by Palo Alto Networks)",
       link: "https://console.com",
       description: [
-        "the ai platform for IT - backed by Thrive — acquired by Palo Alto Networks"
+        "the ai platform for IT - backed by Thrive"
       ],
       image: "/employment/console.png"
     },
