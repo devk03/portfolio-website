@@ -263,26 +263,6 @@ const Home: NextPage = () => {
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </Link>
-          <Link href="https://www.tiktok.com/@real_kunjadia"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
-            <svg
-              className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M19.321 5.562a5.122 5.122 0 0 1-.443-.258 6.228 6.228 0 0 1-1.138-1.009 6.244 6.244 0 0 1-1.856-4.295h-3.397v14.89c0 .606-.049 1.193-.143 1.76a4.477 4.477 0 0 1-.413 1.281 4.438 4.438 0 0 1-3.865 2.252 4.456 4.456 0 0 1-4.451-4.46 4.456 4.456 0 0 1 4.451-4.46c.346 0 .682.04 1.004.116v-3.509a7.944 7.944 0 0 0-1.004-.064 7.98 7.98 0 0 0-7.97 7.917 7.98 7.98 0 0 0 7.97 7.917 7.98 7.98 0 0 0 7.97-7.917c0-.069-.001-.138-.003-.207V7.825a9.543 9.543 0 0 0 5.287 1.604V6.004a6.178 6.178 0 0 1-2.999-.442Z" />
-            </svg>
-          </Link>
-          <Link href="https://www.youtube.com/@devkunjadia3792"
-            className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 text-white hover:text-white backdrop-blur-sm p-2 rounded-full">
-            <svg
-              className="w-[30px] h-[30px] opacity-70 hover:opacity-100 transition-opacity"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-            </svg>
-          </Link>
         </div>
 
         <div className="absolute bottom-8 animate-bounce flex flex-col items-center gap-2">
