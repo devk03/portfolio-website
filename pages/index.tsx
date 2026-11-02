@@ -82,6 +82,11 @@ const Home: NextPage = () => {
 
   const experience: ExperienceType[] = [
     {
+      company: "Palo Alto Networks",
+      link: "https://www.paloaltonetworks.com",
+      description: []
+    },
+    {
       company: "Console (acquired by Palo Alto Networks)",
       link: "https://console.com",
       description: [
