@@ -84,7 +84,7 @@ const Home: NextPage = () => {
     {
       company: "Palo Alto Networks",
       link: "https://www.paloaltonetworks.com",
-      description: []
+      description: ["Directly tackling a 150B+ legacy industry."]
     },
     {
       company: "Console (acquired by Palo Alto Networks)",
